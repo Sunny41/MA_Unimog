@@ -1,0 +1,16 @@
+{
+  "Unimog1": {
+    "id": "1",
+    "name": "404",
+    "acceleration": "1",
+    "maxSpeed": "1",
+    "fuel": "5"
+  },
+  "Unimog2": {
+	"id": "2",
+	"name": "414",
+	"acceleration": "2",
+	"maxSpeed": "2",
+	"fuel": "10"
+  }
+}
