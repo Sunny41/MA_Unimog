@@ -1,0 +1,14 @@
+{
+  "Level1": {
+    "id": 1,
+	"level": 1,
+	"length": 20,
+	"time": 20
+  },
+  "Level2": {
+    "id": 2,
+	"level": 2,
+	"length": 30,
+	"time": 20
+  }
+}

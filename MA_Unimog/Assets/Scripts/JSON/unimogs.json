@@ -4,13 +4,33 @@
     "name": "404",
     "acceleration": "1",
     "maxSpeed": "1",
-    "fuel": "5"
+    "fuel": "1",
+	"spritePath": ""
   },
   "Unimog2": {
 	"id": "2",
 	"name": "414",
 	"acceleration": "2",
 	"maxSpeed": "2",
-	"fuel": "10"
+	"fuel": "2",
+	"spritePath": ""
+  }
+  ,
+  "Unimog3": {
+	"id": "3",
+	"name": "424",
+	"acceleration": "3",
+	"maxSpeed": "3",
+	"fuel": "3",
+	"spritePath": ""
+  }
+  ,
+  "Unimog4": {
+	"id": "4",
+	"name": "434",
+	"acceleration": "4",
+	"maxSpeed": "4",
+	"fuel": "4",
+	"spritePath": ""
   }
 }
