@@ -7,9 +7,13 @@ public class LevelDisplay : MonoBehaviour {
 
     public Button button;
     public Text text;
+    private GameObject unimogSelectMenu;
+    private LevelSelectMenu levelSelectMenu;
 
-	public void Initialize(int levelID, int level)
+    public void Initialize(LevelSelectMenu levelSelectMenu, GameObject unimogSelectMenu, int levelID, int level)
     {
+        this.levelSelectMenu = levelSelectMenu;
+        this.unimogSelectMenu = unimogSelectMenu;
         button.name = levelID.ToString();
         text.text = level.ToString();
     }
@@ -17,5 +21,6 @@ public class LevelDisplay : MonoBehaviour {
     public void SelectLevel()
     {
         Debug.Log("LEVEL " + button.name + " SELECTED");
+        levelSelectMenu.LevelSelected();
     }
 }

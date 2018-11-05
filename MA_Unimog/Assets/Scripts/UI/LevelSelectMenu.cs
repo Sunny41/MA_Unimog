@@ -5,15 +5,16 @@ using UnityEngine;
 using LitJson;
 
 public class LevelSelectMenu : MonoBehaviour {
-
+    
     private JsonData levelData;
     public GameObject scrollbar;
+    public GameObject unimogSelectMenu;
 
     void Start()
     {
         levelData = JsonMapper.ToObject(File.ReadAllText(Application.dataPath + "/Scripts/JSON/levels.json"));
         CreateLevelDisplay();
-    }
+    }    
 
     void CreateLevelDisplay()
     {
@@ -24,9 +25,9 @@ public class LevelSelectMenu : MonoBehaviour {
             {
                 int levelID = (int)levelData[i]["id"];
                 int level = (int)levelData[i]["level"];
-
-                levelDisplay.GetComponent<LevelDisplay>().Initialize(levelID, level);
-                Instantiate(levelDisplay, scrollbar.transform);
+                                
+                GameObject obj = (GameObject)Instantiate(levelDisplay, scrollbar.transform);
+                obj.GetComponent<LevelDisplay>().Initialize(this, unimogSelectMenu, levelID, level);
             }
             else
             {
@@ -36,5 +37,9 @@ public class LevelSelectMenu : MonoBehaviour {
         }
     }
 
-    
+    public void LevelSelected()
+    {
+        gameObject.SetActive(false);
+        unimogSelectMenu.SetActive(true);
+    }
 }

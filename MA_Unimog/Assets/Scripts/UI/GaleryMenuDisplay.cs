@@ -4,11 +4,10 @@ using System.IO;
 using UnityEngine;
 using LitJson;
 
-public class UnimogSelectMenu : MonoBehaviour {
-    
+public class GaleryMenuDisplay : MonoBehaviour {
+
     private JsonData unimogData;
     public GameObject scrollbar;
-    public GameObject LevelSelectMenu;
 
     void Start()
     {
@@ -20,8 +19,8 @@ public class UnimogSelectMenu : MonoBehaviour {
     {
         for (int i = 0; i < unimogData.Count; i++)
         {
-            GameObject unimogDisplay = (GameObject) Resources.Load("Prefabs/UI/UnimogDisplay");
-            if(unimogDisplay != null)
+            GameObject unimogDisplay = (GameObject)Resources.Load("Prefabs/UI/UnimogGalery");
+            if (unimogDisplay != null)
             {
                 int unimogID = int.Parse((string)unimogData[i]["id"]);
                 string spritePath = "Gallery/" + (string)unimogData[i]["sprite"];
@@ -30,14 +29,13 @@ public class UnimogSelectMenu : MonoBehaviour {
                 int acceleration = int.Parse((string)unimogData[i]["acceleration"]);
                 int fuel = int.Parse((string)unimogData[i]["fuel"]);
                 GameObject obj = (GameObject)Instantiate(unimogDisplay, scrollbar.transform);
-                obj.GetComponent<UnimogDisplay>().Initialize(unimogID, spritePath, unimogName, speed, acceleration, fuel);
+                obj.GetComponent<UnimogGalery>().Initialize(unimogID, spritePath);
             }
             else
             {
                 Debug.Log("Cannot load resource!");
             }
-            
+
         }
     }
-
 }

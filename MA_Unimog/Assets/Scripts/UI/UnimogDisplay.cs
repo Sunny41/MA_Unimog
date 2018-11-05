@@ -17,6 +17,15 @@ public class UnimogDisplay : MonoBehaviour {
         button.name = id.ToString();
 
         //Load the image
+        Sprite texture = Resources.Load<Sprite>(texturePath);
+        if (texture != null)
+        {
+            this.texture.sprite = texture;
+        }
+        else
+        {
+            Debug.Log("Texture cannot be loaded!");
+        }
 
         //Set name
         unimogName.text = name;
