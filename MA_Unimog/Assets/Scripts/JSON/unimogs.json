@@ -5,7 +5,8 @@
     "acceleration": "1",
     "maxSpeed": "1",
     "fuel": "1",
-	"sprite": "Unimog01_Galerie"
+	"sprite": "Unimog01_Galerie",
+	"prefab": ""
   },
   "Unimog2": {
 	"id": "2",
@@ -13,7 +14,8 @@
 	"acceleration": "2",
 	"maxSpeed": "2",
 	"fuel": "2",
-	"sprite": "Unimog01_Galerie"
+	"sprite": "Unimog01_Galerie",
+	"prefab": ""
   }
   ,
   "Unimog3": {
@@ -22,7 +24,8 @@
 	"acceleration": "3",
 	"maxSpeed": "3",
 	"fuel": "3",
-	"sprite": "Unimog01_Galerie"
+	"sprite": "Unimog01_Galerie",
+	"prefab": ""
   }
   ,
   "Unimog4": {
@@ -31,6 +34,7 @@
 	"acceleration": "4",
 	"maxSpeed": "4",
 	"fuel": "4",
-	"sprite": "Unimog01_Galerie"
+	"sprite": "Unimog01_Galerie",
+	"prefab": ""
   }
 }

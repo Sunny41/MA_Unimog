@@ -10,10 +10,14 @@ public class LevelSelectMenu : MonoBehaviour {
     public GameObject scrollbar;
     public GameObject unimogSelectMenu;
 
+    private List<GameObject> levelDisplayList;
+
     void Start()
     {
+        levelDisplayList = new List<GameObject>();
         levelData = JsonMapper.ToObject(File.ReadAllText(Application.dataPath + "/Scripts/JSON/levels.json"));
         CreateLevelDisplay();
+        CheckLevelUnlocked();
     }    
 
     void CreateLevelDisplay()
@@ -28,12 +32,28 @@ public class LevelSelectMenu : MonoBehaviour {
                                 
                 GameObject obj = (GameObject)Instantiate(levelDisplay, scrollbar.transform);
                 obj.GetComponent<LevelDisplay>().Initialize(this, unimogSelectMenu, levelID, level);
+                levelDisplayList.Add(obj);
             }
             else
             {
                 Debug.Log("Cannot load resource!");
             }
 
+        }
+    }
+
+    void CheckLevelUnlocked()
+    {
+        int testCount = 0;
+        foreach(GameObject obj in levelDisplayList)
+        {
+            testCount++;
+            if(testCount <= 1)
+            {
+                obj.GetComponent<LevelDisplay>().UnlockLevel();
+                obj.GetComponent<LevelDisplay>().SetRating(1.8f);
+            }
+            
         }
     }
 
