@@ -13,11 +13,12 @@ public class UnimogDisplay : MonoBehaviour {
     public Slider speedSlider;
     public Slider accelerationSlider;
     public Slider fuelSlider;
+    public Slider wheightSlider;
 
     private int id;
     private string prefabPath;
 
-    public void Initialize(UnimogSelectMenu unimogSelectMenu, int id, string prefabPath, string texturePath, string name, int speed, int acceleration, int fuel)
+    public void Initialize(UnimogSelectMenu unimogSelectMenu, int id, string prefabPath, string texturePath, string name, int speed, int acceleration, int fuel, int wheight)
     {
         this.unimogSelectMenu = unimogSelectMenu;
         this.id = id;
@@ -51,6 +52,11 @@ public class UnimogDisplay : MonoBehaviour {
         fuelSlider.minValue = 0;
         fuelSlider.maxValue = 10;
         fuelSlider.value = fuel;
+
+        //Set wheight
+        wheightSlider.minValue = 0;
+        wheightSlider.maxValue = 10;
+        wheightSlider.value = wheight;
     }
 
     public void DebugID()

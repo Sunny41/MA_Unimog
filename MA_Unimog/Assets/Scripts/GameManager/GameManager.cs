@@ -28,11 +28,11 @@ public class GameManager : MonoBehaviour {
 
     private void SetLandscapeRightOrientation()
     {
-        Screen.autorotateToLandscapeLeft = false;
+        Screen.autorotateToLandscapeLeft = true;
         Screen.autorotateToPortrait = false;
         Screen.autorotateToPortraitUpsideDown = false;
         Screen.autorotateToLandscapeRight = true;
-        Screen.orientation = ScreenOrientation.LandscapeRight;
+        Screen.orientation = ScreenOrientation.LandscapeLeft;
     }
 
     public void LoadMenuScene()

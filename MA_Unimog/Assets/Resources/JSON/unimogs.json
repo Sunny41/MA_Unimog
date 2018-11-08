@@ -2,18 +2,20 @@
   "Unimog1": {
     "id": "1",
     "name": "404",
-    "acceleration": "1",
-    "maxSpeed": "1",
-    "fuel": "1",
+    "acceleration": 1,
+    "maxSpeed": 1,
+    "fuel": 1,
+	"wheight": 1,
 	"sprite": "Unimog01_Galerie",
 	"prefab": ""
   },
   "Unimog2": {
 	"id": "2",
 	"name": "414",
-	"acceleration": "2",
-	"maxSpeed": "2",
-	"fuel": "2",
+	"acceleration": 2,
+	"maxSpeed": 2,
+	"fuel": 2,
+	"wheight": 2,
 	"sprite": "Unimog01_Galerie",
 	"prefab": ""
   }
@@ -21,9 +23,10 @@
   "Unimog3": {
 	"id": "3",
 	"name": "424",
-	"acceleration": "3",
-	"maxSpeed": "3",
-	"fuel": "3",
+	"acceleration": 3,
+	"maxSpeed": 3,
+	"fuel": 3,
+	"wheight": 3,
 	"sprite": "Unimog01_Galerie",
 	"prefab": ""
   }
@@ -31,9 +34,10 @@
   "Unimog4": {
 	"id": "4",
 	"name": "434",
-	"acceleration": "4",
-	"maxSpeed": "4",
-	"fuel": "4",
+	"acceleration": 4,
+	"maxSpeed": 4,
+	"fuel": 4,
+	"wheight": 4,
 	"sprite": "Unimog01_Galerie",
 	"prefab": ""
   }
