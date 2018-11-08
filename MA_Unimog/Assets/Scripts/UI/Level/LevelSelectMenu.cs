@@ -2,10 +2,13 @@
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
+using UnityEngine.Networking;
 using LitJson;
 
 public class LevelSelectMenu : MonoBehaviour {
-    
+
+    private GameManager gm;
+
     private JsonData levelData;
     public GameObject scrollbar;
     public GameObject unimogSelectMenu;
@@ -14,8 +17,10 @@ public class LevelSelectMenu : MonoBehaviour {
 
     void Start()
     {
+        gm = GameObject.Find("GameManager").GetComponent<GameManager>();
         levelDisplayList = new List<GameObject>();
-        levelData = JsonMapper.ToObject(File.ReadAllText(Application.dataPath + "/Scripts/JSON/levels.json"));
+        TextAsset jsonFile = Resources.Load<TextAsset>("JSON/levels") as TextAsset;
+        levelData = JsonMapper.ToObject(jsonFile.text);
         CreateLevelDisplay();
         CheckLevelUnlocked();
     }    
@@ -29,9 +34,10 @@ public class LevelSelectMenu : MonoBehaviour {
             {
                 int levelID = (int)levelData[i]["id"];
                 int level = (int)levelData[i]["level"];
+                string sceneId = (string)levelData[i]["sceneId"];
                                 
                 GameObject obj = (GameObject)Instantiate(levelDisplay, scrollbar.transform);
-                obj.GetComponent<LevelDisplay>().Initialize(this, unimogSelectMenu, levelID, level);
+                obj.GetComponent<LevelDisplay>().Initialize(this, unimogSelectMenu, levelID, sceneId, level);
                 levelDisplayList.Add(obj);
             }
             else
@@ -57,9 +63,10 @@ public class LevelSelectMenu : MonoBehaviour {
         }
     }
 
-    public void LevelSelected()
+    public void LevelSelected(string sceneId)
     {
         gameObject.SetActive(false);
         unimogSelectMenu.SetActive(true);
+        gm.SetSceneId(sceneId);
     }
 }

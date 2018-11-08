@@ -16,7 +16,11 @@ public class LevelDisplay : MonoBehaviour {
     private bool locked;
     private string levelTexturePath;
 
-    public void Initialize(LevelSelectMenu levelSelectMenu, GameObject unimogSelectMenu, int levelID, int level)
+    private int levelId;
+    private string sceneId;
+    private int level;
+
+    public void Initialize(LevelSelectMenu levelSelectMenu, GameObject unimogSelectMenu, int levelID, string sceneId, int level)
     {
         locked = true;
         //Set level texture
@@ -25,17 +29,19 @@ public class LevelDisplay : MonoBehaviour {
         //Set level parameters
         this.levelSelectMenu = levelSelectMenu;
         this.unimogSelectMenu = unimogSelectMenu;
-        button.name = levelID.ToString();
         text.text = level.ToString();
         levelRating.SetRating(0f);
+        this.levelId = levelID;
+        this.sceneId = sceneId;
+        this.level = level;
     }
 
     public void SelectLevel()
     {
         if (!locked)
         {
-            Debug.Log("LEVEL " + button.name + " SELECTED");
-            levelSelectMenu.LevelSelected();
+            Debug.Log("LEVEL " + level + " SELECTED. SCENEID: " + sceneId);
+            levelSelectMenu.LevelSelected(sceneId);
         }        
     }
 

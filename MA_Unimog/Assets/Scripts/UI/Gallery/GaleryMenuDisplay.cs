@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using System.IO;
-using UnityEngine;
+﻿using UnityEngine;
 using LitJson;
 
 public class GaleryMenuDisplay : MonoBehaviour {
@@ -11,7 +8,8 @@ public class GaleryMenuDisplay : MonoBehaviour {
 
     void Start()
     {
-        unimogData = JsonMapper.ToObject(File.ReadAllText(Application.dataPath + "/Scripts/JSON/unimogs.json"));
+        TextAsset jsonFile = Resources.Load<TextAsset>("JSON/unimogs") as TextAsset;
+        unimogData = JsonMapper.ToObject(jsonFile.text);
         CreateUnimogDisplay();
     }
 

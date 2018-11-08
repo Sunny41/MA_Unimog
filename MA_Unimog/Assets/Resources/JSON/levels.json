@@ -1,14 +1,14 @@
 {
   "Level1": {
     "id": 1,
-	"sceneId":"scene_name",
+	"sceneId":"SampleScene",
 	"level": 1,
 	"length": 20,
 	"time": 20
   },
   "Level2": {
     "id": 2,
-	"sceneId":"scene_name",
+	"sceneId":"LvL_0_Tutorial",
 	"level": 2,
 	"length": 30,
 	"time": 20
@@ -16,7 +16,7 @@
   ,
   "Level3": {
     "id": 3,
-	"sceneId":"scene_name",
+	"sceneId":"LvL_0_Tutorial",
 	"level": 3,
 	"length": 30,
 	"time": 25

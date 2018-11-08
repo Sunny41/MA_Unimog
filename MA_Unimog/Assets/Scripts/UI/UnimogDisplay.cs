@@ -1,10 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class UnimogDisplay : MonoBehaviour {
 
+    private UnimogSelectMenu unimogSelectMenu;
     public Button button;
     public Image texture;
     public Text unimogName;
@@ -12,9 +14,14 @@ public class UnimogDisplay : MonoBehaviour {
     public Slider accelerationSlider;
     public Slider fuelSlider;
 
-    public void Initialize(int id, string texturePath, string name, int speed, int acceleration, int fuel)
+    private int id;
+    private string prefabPath;
+
+    public void Initialize(UnimogSelectMenu unimogSelectMenu, int id, string prefabPath, string texturePath, string name, int speed, int acceleration, int fuel)
     {
-        button.name = id.ToString();
+        this.unimogSelectMenu = unimogSelectMenu;
+        this.id = id;
+        this.prefabPath = prefabPath;
 
         //Load the image
         Sprite texture = Resources.Load<Sprite>(texturePath);
@@ -48,6 +55,7 @@ public class UnimogDisplay : MonoBehaviour {
 
     public void DebugID()
     {
-        Debug.Log("LOAD UNIMOG WITH ID: " + button.name);
+        Debug.Log("UNIMOGID: " + id);
+        unimogSelectMenu.UnimogSelected(prefabPath);
     }
 }

@@ -1,28 +1,26 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using System.IO;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 using LitJson;
 
 public class CreditsMenu : MonoBehaviour {
 
     public Text creditText;
-    private JsonData levelData;
+    private JsonData creditsData;
 
     void Start () {
-        levelData = JsonMapper.ToObject(File.ReadAllText(Application.dataPath + "/Scripts/JSON/credits.json"));
+        TextAsset jsonFile = Resources.Load<TextAsset>("JSON/credits") as TextAsset;
+        creditsData = JsonMapper.ToObject(jsonFile.text);
         CreateCredits();
     }
 
     private void CreateCredits()
     {
-        for (int i = 0; i < levelData.Count; i++)
+        for (int i = 0; i < creditsData.Count; i++)
         {
-            string engine = (string)levelData[i]["engine"];
-            string aboutUs = (string)levelData[i]["aboutUs"];
-            string aboutGame = (string)levelData[i]["aboutGame"];
-            string aboutMuseum = (string)levelData[i]["aboutMuseum"];
+            string engine = (string)creditsData[i]["engine"];
+            string aboutUs = (string)creditsData[i]["aboutUs"];
+            string aboutGame = (string)creditsData[i]["aboutGame"];
+            string aboutMuseum = (string)creditsData[i]["aboutMuseum"];
 
 
             string[] students = aboutUs.Split(';');

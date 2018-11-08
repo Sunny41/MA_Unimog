@@ -1,18 +1,19 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using System.IO;
-using UnityEngine;
+﻿using UnityEngine;
 using LitJson;
 
 public class UnimogSelectMenu : MonoBehaviour {
-    
+
+    private GameManager gm;
+
     private JsonData unimogData;
     public GameObject scrollbar;
     public GameObject LevelSelectMenu;
 
     void Start()
     {
-        unimogData = JsonMapper.ToObject(File.ReadAllText(Application.dataPath + "/Scripts/JSON/unimogs.json"));
+        gm = GameObject.Find("GameManager").GetComponent<GameManager>();
+        TextAsset jsonFile = Resources.Load<TextAsset>("JSON/unimogs") as TextAsset;
+        unimogData = JsonMapper.ToObject(jsonFile.text);
         CreateUnimogDisplay();
     }
 
@@ -29,8 +30,9 @@ public class UnimogSelectMenu : MonoBehaviour {
                 int speed = int.Parse((string)unimogData[i]["maxSpeed"]);
                 int acceleration = int.Parse((string)unimogData[i]["acceleration"]);
                 int fuel = int.Parse((string)unimogData[i]["fuel"]);
+                string prefabPath = (string)unimogData[i]["prefab"];
                 GameObject obj = (GameObject)Instantiate(unimogDisplay, scrollbar.transform);
-                obj.GetComponent<UnimogDisplay>().Initialize(unimogID, spritePath, unimogName, speed, acceleration, fuel);
+                obj.GetComponent<UnimogDisplay>().Initialize(this, unimogID, prefabPath, spritePath, unimogName, speed, acceleration, fuel);
             }
             else
             {
@@ -38,6 +40,12 @@ public class UnimogSelectMenu : MonoBehaviour {
             }
             
         }
+    }
+
+    public void UnimogSelected(string prefabPath)
+    {
+        gm.SetUnimogPrefabPath(prefabPath);
+        gm.LoadLevelScene();
     }
 
 }
