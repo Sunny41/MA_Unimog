@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class IngameMenu : MonoBehaviour {
 
@@ -9,5 +7,10 @@ public class IngameMenu : MonoBehaviour {
     public void LoadMenuScene()
     {
         GameObject.Find("GameManager").GetComponent<GameManager>().LoadMenuScene();
+    }
+
+    public void RestartLevel()
+    {
+        GameObject.Find("GameManager").GetComponent<GameManager>().LoadLevelScene();
     }
 }

@@ -13,8 +13,9 @@ public class GameManager : MonoBehaviour {
         {
             DontDestroyOnLoad(this.gameObject);
             created = true;
+            SetPortraitRotation();
         }
-        SetPortraitRotation();
+        
     }
 
     private void SetPortraitRotation()
@@ -26,13 +27,13 @@ public class GameManager : MonoBehaviour {
         Screen.orientation = ScreenOrientation.Portrait;
     }
 
-    private void SetLandscapeRightOrientation()
+    private void SetLandscapeOrientation()
     {
+        Screen.autorotateToLandscapeRight = true;
         Screen.autorotateToLandscapeLeft = true;
         Screen.autorotateToPortrait = false;
         Screen.autorotateToPortraitUpsideDown = false;
-        Screen.autorotateToLandscapeRight = true;
-        Screen.orientation = ScreenOrientation.LandscapeLeft;
+        Screen.orientation = ScreenOrientation.Landscape;
     }
 
     public void LoadMenuScene()
@@ -46,8 +47,8 @@ public class GameManager : MonoBehaviour {
         Debug.Log("Load LevelID: " + sceneId);
         Debug.Log("Load UnimogPrefab: " + unimogPrefabPath);
 
-        SceneManager.LoadSceneAsync(sceneId);
-        SetLandscapeRightOrientation();
+        SceneManager.LoadScene(sceneId, LoadSceneMode.Single);   
+        SetLandscapeOrientation();
     }
 
     public void SetUnimogPrefabPath(string prefabPath)

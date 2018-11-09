@@ -24,7 +24,7 @@ public class LevelDisplay : MonoBehaviour {
     {
         locked = true;
         //Set level texture
-        Sprite lockedLevel = (Sprite)Resources.Load<Sprite>("Level/Schloss");
+        Sprite lockedLevel = (Sprite)Resources.Load<Sprite>("Textures/Schloss");
         levelTexture.sprite = lockedLevel;
         //Set level parameters
         this.levelSelectMenu = levelSelectMenu;
