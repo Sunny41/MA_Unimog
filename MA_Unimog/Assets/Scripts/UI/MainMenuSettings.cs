@@ -5,6 +5,7 @@ public class MainMenuSettings : MonoBehaviour {
 
     public Slider musicVolume;
     public Slider effectsVolume;
+    public Toggle enableMusic;
 
     private SettingsManager settings;
 
@@ -16,6 +17,8 @@ public class MainMenuSettings : MonoBehaviour {
 
         effectsVolume.value = settings.EffectsVolume;
         effectsVolume.onValueChanged.AddListener(delegate { EffectsVolumeChange(); });
+
+        enableMusic.isOn = settings.EnableMusic;
     }
 
     private void MusicVolumeChange()
@@ -26,6 +29,11 @@ public class MainMenuSettings : MonoBehaviour {
     private void EffectsVolumeChange()
     {
         settings.SetEffectsVolume(effectsVolume.value);
+    }
+
+    public void EnableDisableMusic()
+    {
+        settings.SetMusicEnabled(enableMusic.isOn);
     }
 
 }

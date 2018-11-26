@@ -43,7 +43,8 @@ public class AudioManager : MonoBehaviour {
     }
 
     void Start () {
-        Play("MainTheme");
+        if(settings.EnableMusic)
+            Play("MainTheme");
 	}
 
     //Find a sound by it's name and play it
@@ -83,6 +84,27 @@ public class AudioManager : MonoBehaviour {
             if (sound.layer == 1)
                 sound.source.volume = settings.EffectsVolume;
         }
+    }
+
+    public void EnableMusic(bool enable)
+    {
+        if (enable)
+        {
+            foreach (Sound sound in sounds)
+            {
+                if (sound.layer == 0)
+                    sound.source.Play();
+            }
+        }
+        else
+        {
+            foreach (Sound sound in sounds)
+            {
+                if (sound.layer == 0)
+                    sound.source.Stop();
+            }
+        }
+        
     }
 
 }
