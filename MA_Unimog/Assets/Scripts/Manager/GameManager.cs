@@ -2,20 +2,20 @@
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour {
-
-    private static bool created = false;
+    
     private string unimogPrefabPath;
     private string sceneId;
 
+    //Singleton
+    public static GameManager instance;
+
     void Awake()
     {
-        if (!created)
+        if (!instance)
         {
             DontDestroyOnLoad(this.gameObject);
-            created = true;
             SetPortraitRotation();
         }
-        
     }
 
     private void SetPortraitRotation()

@@ -1,8 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using System.IO;
+﻿using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Networking;
 using LitJson;
 
 public class LevelSelectMenu : MonoBehaviour {
@@ -54,7 +51,7 @@ public class LevelSelectMenu : MonoBehaviour {
         foreach(GameObject obj in levelDisplayList)
         {
             testCount++;
-            if(testCount <= 1)
+            if(testCount <= 2)
             {
                 obj.GetComponent<LevelDisplay>().UnlockLevel();
                 obj.GetComponent<LevelDisplay>().SetRating(1.8f);
