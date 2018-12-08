@@ -101,7 +101,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4509992415044396}
   - component: {fileID: 70083451165067768}
-  - component: {fileID: 50361444117494962}
+  - component: {fileID: 50986114331569262}
   - component: {fileID: 114586657175953544}
   - component: {fileID: 114006290037507618}
   m_Layer: 8
@@ -123,6 +123,7 @@ GameObject:
   - component: {fileID: 70127302781790228}
   - component: {fileID: 61890467929995474}
   - component: {fileID: 61077673869669668}
+  - component: {fileID: 114644460885629996}
   m_Layer: 8
   m_Name: Unimog_405
   m_TagString: Untagged
@@ -137,11 +138,11 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1645432689487206}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.021, y: 0.471, z: 0}
+  m_LocalPosition: {x: -0.020999908, y: 0.47099996, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4509992415044396}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4339623068442156
 Transform:
@@ -166,9 +167,9 @@ Transform:
   m_LocalPosition: {x: -7.91, y: -2.46, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 4697764222224958}
   - {fileID: 4627450034349960}
   - {fileID: 4334374851289580}
-  - {fileID: 4697764222224958}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -178,12 +179,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1307545892604690}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.017, y: -0.255, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.017000198, y: -0.2550001, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4509992415044396}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4697764222224958
 Transform:
@@ -199,7 +200,7 @@ Transform:
   - {fileID: 4718720786575706}
   - {fileID: 4989266812449274}
   m_Father: {fileID: 4509992415044396}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4718720786575706
 Transform:
@@ -227,7 +228,7 @@ Transform:
   m_Father: {fileID: 4697764222224958}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!50 &50361444117494962
+--- !u!50 &50986114331569262
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 1
@@ -367,7 +368,7 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1638211327483648}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 14232a7aaa72b4e29b5f07452ad8ecb5, type: 2}
   m_CullingMode: 0
@@ -402,7 +403,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1820001640334790}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7fc426d33e32d46eca2dee4a79ee537f, type: 3}
   m_Name: 
@@ -435,6 +436,24 @@ MonoBehaviour:
   m_GroundCheck: {fileID: 4627450034349960}
   m_CeilingCheck: {fileID: 4334374851289580}
   m_CrouchDisableCollider: {fileID: 0}
+--- !u!114 &114644460885629996
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1997086923551092}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fc426d33e32d46eca2dee4a79ee537f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controller: {fileID: 114586657175953544}
+  driveJoystick: {fileID: 0}
+  tiltJoystick: {fileID: 0}
+  frontWheelAnimator: {fileID: 95803657799121022}
+  backWheelAnimator: {fileID: 95350200725220704}
+  driveSpeed: 15
+  tiltAmount: 30
 --- !u!212 &212222057713117758
 SpriteRenderer:
   m_ObjectHideFlags: 1

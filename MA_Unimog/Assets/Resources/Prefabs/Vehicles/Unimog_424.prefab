@@ -57,6 +57,7 @@ GameObject:
   - component: {fileID: 70566696479348586}
   - component: {fileID: 61020535419121204}
   - component: {fileID: 61667182236676342}
+  - component: {fileID: 114461445309313982}
   m_Layer: 8
   m_Name: Unimog_424
   m_TagString: Untagged
@@ -269,7 +270,7 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1437721608632070}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 14232a7aaa72b4e29b5f07452ad8ecb5, type: 2}
   m_CullingMode: 0
@@ -280,6 +281,26 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114461445309313982
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1767865268623746}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fc426d33e32d46eca2dee4a79ee537f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controller: {fileID: 0}
+  driveJoystick: {fileID: 0}
+  tiltJoystick: {fileID: 0}
+  frontWheelAnimator: {fileID: 95102975104888320, guid: 6275ef808b7ed4fc785ba144711c2b77,
+    type: 2}
+  backWheelAnimator: {fileID: 95164190067678506, guid: 6275ef808b7ed4fc785ba144711c2b77,
+    type: 2}
+  driveSpeed: 15
+  tiltAmount: 30
 --- !u!212 &212560490039597800
 SpriteRenderer:
   m_ObjectHideFlags: 1
