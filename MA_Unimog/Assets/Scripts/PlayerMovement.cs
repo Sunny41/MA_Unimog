@@ -8,7 +8,7 @@ public class PlayerMovement : MonoBehaviour
     public CharacterController2D controller;
 
     public Joystick driveJoystick;
-    public Joystick tiltJoystick;
+    //public Joystick tiltJoystick;
 
     public Animator frontWheelAnimator;
     public Animator backWheelAnimator;
@@ -36,7 +36,7 @@ public class PlayerMovement : MonoBehaviour
             backWheelAnimator.SetTrigger("driving");
         }
 
-        tilt = tiltJoystick.Horizontal * tiltAmount;
+        //tilt = tiltJoystick.Horizontal * tiltAmount;
 
         if(tilt > 0){
             Debug.Log(tilt);
