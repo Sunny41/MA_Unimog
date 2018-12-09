@@ -17,12 +17,12 @@
 		"salesDescription":"U 25 (4. Juni 1951 - August 1953)",
 		"numberModel": 8,
 		"engine": "OM 636.914 (1,7-Liter 4-Zylinder-Diesel)",
-		"enginePower": "",
-		"capaticy": "",
-		"dimension": "",
-		"wheelbase": "",
-		"maxWheightAllowed"": "",
-		"quantity": ""
+		"enginePower": "18KW (25 PS) bei 2300/min",
+		"capaticy": "1767ccm",
+		"dimension": "3570 x 1630 x 2100mm",
+		"wheelbase": "1720mm",
+		"maxWheightAllowed": "3150kg, Nutzlast 1000kg",
+		"quantity": "5846 Einheiten"
 	}
   },
   "Unimog2": {
@@ -36,19 +36,19 @@
 	"prefab": "",
 	"nomenclature":{
 		"sprite": "",
-		"year": 1951,
+		"year": 1976,
 		"manufacturer": "MERCEDES-BENZ",
 		"type": "UNIMOG",
-		"modelSeries": "Bauhreihe 2010",
-		"salesDescription":"U 25 (4. Juni 1951 - August 1953)",
-		"numberModel": 8,
-		"engine": "OM 636.914 (1,7-Liter 4-Zylinder-Diesel)",
-		"enginePower": "",
-		"capaticy": "",
-		"dimension": "",
-		"wheelbase": "",
-		"maxWheightAllowed"": "",
-		"quantity": ""
+		"modelSeries": "Bauhreihe 424",
+		"salesDescription":"U 1000 (September 1976 - Januar 1989), U 1000 T (Januar 1979 - Juni 1983), U 1200 (Juni 1982 - Dezember 1988), U 1200 T (Januar 1983 - Dezember 1988), U 1250 (Mai 1984 - Januar 1989), U 1550 (1986 - 1989), U 1250 L (Januar 1985 - Dezember 1988), U 1550 L (1986 - 1988),",
+		"numberModel": 6,
+		"engine": "OM 352 (6-Zylinder-Diesel-Direkteinspritzer, OM352 A (6-Zylinder-Dieselmotor Direkteinspritzer mit Turbolader))",
+		"enginePower": "70KW (90PS), 81KW (110PS), 92KW (125PS), 110KW (150PS)",
+		"capaticy": "5675ccm",
+		"dimension": "4470 x 2100 x 2645mm (U 100), 2750 x 2110 x 2645mm (U 1000 T), 4870 x 2300 x 2685mm (U 1200), 5070 x 2100 x 2620mm (U 1250 / U 1550 ), 5280  x 2100 x 2620mm (U 1250 L / U 1550 L)",
+		"wheelbase": "2650mm / 3250mm",
+		"maxWheightAllowed": "7500kg / 9000kg / 10500kg, Nutzlast: 2350kg / 3600kg / 2900kg",
+		"quantity": "11232 Einheiten"
 	}
   },
   "Unimog3": {
@@ -62,19 +62,19 @@
 	"prefab": "",
 	"nomenclature":{
 		"sprite": "",
-		"year": 1951,
+		"year": 2007,
 		"manufacturer": "MERCEDES-BENZ",
 		"type": "UNIMOG",
-		"modelSeries": "Bauhreihe 2010",
-		"salesDescription":"U 25 (4. Juni 1951 - August 1953)",
-		"numberModel": 8,
-		"engine": "OM 636.914 (1,7-Liter 4-Zylinder-Diesel)",
-		"enginePower": "",
-		"capaticy": "",
-		"dimension": "",
-		"wheelbase": "",
-		"maxWheightAllowed"": "",
-		"quantity": ""
+		"modelSeries": "Bauhreihe 405",
+		"salesDescription":"U 20",
+		"numberModel": 1,
+		"engine": "OM 904 LA (4-Zylinder in Reihe Diesel-Direkteinspritzer mit Turbolader und Ladeluftkühlung)",
+		"enginePower": "110KW (150PS), 130KW(177PS)",
+		"capaticy": "4249ccm",
+		"dimension": "4970 x 2060 x 2700mm",
+		"wheelbase": "2700mm",
+		"maxWheightAllowed": "7500kg / 8500kg / 9300kg, Nutzlast: 2850kg / 3850kg / 4650kg",
+		"quantity": "Wird weiterhin hergestellt"
 	}
   },
 }
