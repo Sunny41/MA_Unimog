@@ -15,6 +15,9 @@ public class UnimogSelectMenu : MonoBehaviour {
         TextAsset jsonFile = Resources.Load<TextAsset>("JSON/unimogs") as TextAsset;
         unimogData = JsonMapper.ToObject(jsonFile.text);
         CreateUnimogDisplay();
+
+        //Deactivate menu-obj
+        gameObject.SetActive(false);
     }
 
     void CreateUnimogDisplay()
@@ -24,7 +27,7 @@ public class UnimogSelectMenu : MonoBehaviour {
             GameObject unimogDisplay = (GameObject) Resources.Load("Prefabs/UI/UnimogDisplay");
             if(unimogDisplay != null)
             {
-                int unimogID = int.Parse((string)unimogData[i]["id"]);
+                int unimogID = (int)unimogData[i]["id"];
                 string spritePath = "Gallery/" + (string)unimogData[i]["sprite"];
                 string unimogName = (string)unimogData[i]["name"];
                 int speed = (int)unimogData[i]["maxSpeed"];

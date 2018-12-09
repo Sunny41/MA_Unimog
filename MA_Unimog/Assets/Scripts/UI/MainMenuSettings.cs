@@ -19,6 +19,9 @@ public class MainMenuSettings : MonoBehaviour {
         effectsVolume.onValueChanged.AddListener(delegate { EffectsVolumeChange(); });
 
         enableMusic.isOn = settings.EnableMusic;
+
+        //Deactivate menu-obj
+        gameObject.SetActive(false);
     }
 
     private void MusicVolumeChange()

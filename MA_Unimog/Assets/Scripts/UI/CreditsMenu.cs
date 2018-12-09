@@ -11,6 +11,9 @@ public class CreditsMenu : MonoBehaviour {
         TextAsset jsonFile = Resources.Load<TextAsset>("JSON/credits") as TextAsset;
         creditsData = JsonMapper.ToObject(jsonFile.text);
         CreateCredits();
+
+        //Deactivate menu-obj
+        gameObject.SetActive(false);
     }
 
     private void CreateCredits()

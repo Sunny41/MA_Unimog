@@ -20,6 +20,9 @@ public class LevelSelectMenu : MonoBehaviour {
         levelData = JsonMapper.ToObject(jsonFile.text);
         CreateLevelDisplay();
         CheckLevelUnlocked();
+
+        //Deactivate menu-obj
+        gameObject.SetActive(false);
     }    
 
     void CreateLevelDisplay()

@@ -6,6 +6,13 @@ public class GameManager : MonoBehaviour {
     private string unimogPrefabPath;
     private string sceneId;
 
+    [SerializeField] private GameObject mainMenu;
+    [SerializeField] private GameObject unimogSelectMenu;
+    [SerializeField] private GameObject levelSelectMenu;
+    [SerializeField] private GameObject creditsMenu;
+    [SerializeField] private GameObject settingsMenu;
+    [SerializeField] private GameObject galerieMenu;
+
     //Singleton
     public static GameManager instance;
 
@@ -16,6 +23,14 @@ public class GameManager : MonoBehaviour {
             DontDestroyOnLoad(this.gameObject);
             SetPortraitRotation();
         }
+
+        //activate all menus. They deactivate them self after theri initialisation
+        mainMenu.SetActive(true);
+        unimogSelectMenu.SetActive(true);
+        levelSelectMenu.SetActive(true);
+        creditsMenu.SetActive(true);
+        settingsMenu.SetActive(true);
+        galerieMenu.SetActive(true);
     }
 
     private void SetPortraitRotation()
