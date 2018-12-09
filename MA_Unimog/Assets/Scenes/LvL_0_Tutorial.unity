@@ -249,6 +249,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &186631960 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114918100521444000, guid: 6275ef808b7ed4fc785ba144711c2b77,
+    type: 2}
+  m_PrefabInternal: {fileID: 1533139296}
+  m_Script: {fileID: 11500000, guid: 7fc426d33e32d46eca2dee4a79ee537f, type: 3}
 --- !u!1 &206277597
 GameObject:
   m_ObjectHideFlags: 0
@@ -479,11 +485,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &269374259 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 95164190067678506, guid: 6275ef808b7ed4fc785ba144711c2b77,
-    type: 2}
-  m_PrefabInternal: {fileID: 1533139296}
 --- !u!224 &289297167
 RectTransform:
   m_ObjectHideFlags: 0
@@ -632,7 +633,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 406334166}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 186631960}
+        m_MethodName: tiltForwards
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!1 &436103100
@@ -711,7 +723,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 436103103}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 186631960}
+        m_MethodName: tiltBackwards
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &436103103
@@ -1182,7 +1205,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4367041096279350, guid: b7b1705a08d9c48438f17055c9238fe3, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 4367041096279350, guid: b7b1705a08d9c48438f17055c9238fe3, type: 2}
       propertyPath: m_LocalRotation.x
@@ -1219,7 +1242,6 @@ GameObject:
   - component: {fileID: 736358275}
   - component: {fileID: 736358276}
   - component: {fileID: 736358274}
-  - component: {fileID: 736358273}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -1227,24 +1249,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &736358273
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 114006290037507618, guid: ea8c4b5091c7f49e5831c1a43be4221e,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 736358272}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7fc426d33e32d46eca2dee4a79ee537f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  controller: {fileID: 736358274}
-  driveJoystick: {fileID: 289297168}
-  frontWheelAnimator: {fileID: 1242817431}
-  backWheelAnimator: {fileID: 269374259}
-  driveSpeed: 15
-  tiltAmount: 30
 --- !u!114 &736358274
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1980,11 +1984,6 @@ Transform:
   m_Father: {fileID: 542170403}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &1242817431 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 95102975104888320, guid: 6275ef808b7ed4fc785ba144711c2b77,
-    type: 2}
-  m_PrefabInternal: {fileID: 1533139296}
 --- !u!1 &1362892098
 GameObject:
   m_ObjectHideFlags: 0
