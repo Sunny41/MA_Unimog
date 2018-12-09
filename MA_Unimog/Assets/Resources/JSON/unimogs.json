@@ -1,44 +1,80 @@
 {
   "Unimog1": {
-    "id": "1",
-    "name": "404",
+    "id": 1,
+    "name": "2010",
     "acceleration": 1,
     "maxSpeed": 1,
     "fuel": 1,
 	"wheight": 1,
 	"sprite": "Unimog01_Galerie",
-	"prefab": ""
+	"prefab": "",
+	"nomenclature":{
+		"sprite": "",
+		"year": 1951,
+		"manufacturer": "MERCEDES-BENZ",
+		"type": "UNIMOG",
+		"modelSeries": "Bauhreihe 2010",
+		"salesDescription":"U 25 (4. Juni 1951 - August 1953)",
+		"numberModel": 8,
+		"engine": "OM 636.914 (1,7-Liter 4-Zylinder-Diesel)",
+		"enginePower": "",
+		"capaticy": "",
+		"dimension": "",
+		"wheelbase": "",
+		"maxWheightAllowed"": "",
+		"quantity": ""
+	}
   },
   "Unimog2": {
-	"id": "2",
-	"name": "414",
-	"acceleration": 2,
-	"maxSpeed": 2,
-	"fuel": 2,
-	"wheight": 2,
-	"sprite": "Unimog01_Galerie",
-	"prefab": ""
-  }
-  ,
-  "Unimog3": {
-	"id": "3",
-	"name": "424",
-	"acceleration": 3,
-	"maxSpeed": 3,
-	"fuel": 3,
+    "id": 2,
+    "name": "424",
+    "acceleration": 2,
+    "maxSpeed": 3,
+    "fuel": 3,
 	"wheight": 3,
 	"sprite": "Unimog01_Galerie",
-	"prefab": ""
-  }
-  ,
-  "Unimog4": {
-	"id": "4",
-	"name": "434",
-	"acceleration": 4,
-	"maxSpeed": 4,
-	"fuel": 4,
-	"wheight": 4,
+	"prefab": "",
+	"nomenclature":{
+		"sprite": "",
+		"year": 1951,
+		"manufacturer": "MERCEDES-BENZ",
+		"type": "UNIMOG",
+		"modelSeries": "Bauhreihe 2010",
+		"salesDescription":"U 25 (4. Juni 1951 - August 1953)",
+		"numberModel": 8,
+		"engine": "OM 636.914 (1,7-Liter 4-Zylinder-Diesel)",
+		"enginePower": "",
+		"capaticy": "",
+		"dimension": "",
+		"wheelbase": "",
+		"maxWheightAllowed"": "",
+		"quantity": ""
+	}
+  },
+  "Unimog3": {
+    "id": 3,
+    "name": "405",
+    "acceleration": 3,
+    "maxSpeed": 4,
+    "fuel": 5,
+	"wheight": 3,
 	"sprite": "Unimog01_Galerie",
-	"prefab": ""
-  }
+	"prefab": "",
+	"nomenclature":{
+		"sprite": "",
+		"year": 1951,
+		"manufacturer": "MERCEDES-BENZ",
+		"type": "UNIMOG",
+		"modelSeries": "Bauhreihe 2010",
+		"salesDescription":"U 25 (4. Juni 1951 - August 1953)",
+		"numberModel": 8,
+		"engine": "OM 636.914 (1,7-Liter 4-Zylinder-Diesel)",
+		"enginePower": "",
+		"capaticy": "",
+		"dimension": "",
+		"wheelbase": "",
+		"maxWheightAllowed"": "",
+		"quantity": ""
+	}
+  },
 }
