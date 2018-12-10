@@ -33,6 +33,9 @@ public class PlayerMovement : MonoBehaviour
         else{
             frontWheelAnimator.SetTrigger("driving");
             backWheelAnimator.SetTrigger("driving");
+
+            frontWheelAnimator.speed = Mathf.Clamp01(horizontalMove/driveSpeed);
+            backWheelAnimator.speed = Mathf.Clamp01(horizontalMove/driveSpeed);
         }
 
     }

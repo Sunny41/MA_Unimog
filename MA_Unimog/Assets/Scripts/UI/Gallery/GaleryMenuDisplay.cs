@@ -27,12 +27,8 @@ public class GaleryMenuDisplay : MonoBehaviour {
                 int unimogID = (int) unimogData[i]["id"];
                 string spritePath = "Gallery/" + (string)unimogData[i]["sprite"];
                 string unimogName = (string)unimogData[i]["nomenclature"]["modelSeries"];
-                int speed = (int)unimogData[i]["maxSpeed"];
-                int acceleration = (int)unimogData[i]["acceleration"];
-                int fuel = (int)unimogData[i]["fuel"];
-                int wheight = (int)unimogData[i]["wheight"];
                 GameObject obj = (GameObject)Instantiate(unimogGalery, scrollbar.transform);
-                obj.GetComponent<UnimogGalery>().Initialize(this, unimogID, spritePath);
+                obj.GetComponent<UnimogGalery>().Initialize(this, unimogID, spritePath, unimogName);
             }
             else
             {
