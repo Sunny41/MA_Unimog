@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Name: Flat Platform
   m_EditorClassIdentifier: 
   m_Angles:
-  - m_Start: -45
-    m_End: 45
+  - m_Start: -90
+    m_End: 90
     m_Order: 0
     m_Sprites:
     - {fileID: 21300000, guid: fe220f5140de3324ab2e13a8de8993ab, type: 3}
-  - m_Start: 45
+  - m_Start: 90
     m_End: 135
     m_Order: 0
     m_Sprites:
@@ -28,7 +28,7 @@ MonoBehaviour:
     m_Sprites:
     - {fileID: 21300000, guid: 71c9d16b0d779e04e8a6d6f78cf7837b, type: 3}
   - m_Start: -135
-    m_End: -45
+    m_End: -90
     m_Order: 0
     m_Sprites:
     - {fileID: 21300000, guid: 71c9d16b0d779e04e8a6d6f78cf7837b, type: 3}
