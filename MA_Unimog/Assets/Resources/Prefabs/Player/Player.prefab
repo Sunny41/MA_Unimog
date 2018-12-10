@@ -410,7 +410,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controller: {fileID: 114586657175953544}
   driveJoystick: {fileID: 0}
-  tiltJoystick: {fileID: 0}
   frontWheelAnimator: {fileID: 95803657799121022}
   backWheelAnimator: {fileID: 95350200725220704}
   driveSpeed: 15
@@ -449,7 +448,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controller: {fileID: 114586657175953544}
   driveJoystick: {fileID: 0}
-  tiltJoystick: {fileID: 0}
   frontWheelAnimator: {fileID: 95803657799121022}
   backWheelAnimator: {fileID: 95350200725220704}
   driveSpeed: 15
