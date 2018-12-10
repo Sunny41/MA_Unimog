@@ -26,7 +26,7 @@ public class GaleryMenuDisplay : MonoBehaviour {
             {
                 int unimogID = (int) unimogData[i]["id"];
                 string spritePath = "Gallery/" + (string)unimogData[i]["sprite"];
-                string unimogName = (string)unimogData[i]["name"];
+                string unimogName = (string)unimogData[i]["nomenclature"]["modelSeries"];
                 int speed = (int)unimogData[i]["maxSpeed"];
                 int acceleration = (int)unimogData[i]["acceleration"];
                 int fuel = (int)unimogData[i]["fuel"];
