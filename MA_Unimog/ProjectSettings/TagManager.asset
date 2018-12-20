@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - boxes
   layers:
   - Default
   - TransparentFX
@@ -17,6 +18,7 @@ TagManager:
   - Terrain
   - Background
   - Collectable
+  - Box
   - 
   - 
   - 
@@ -26,9 +28,8 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
-  - 
+  - car_body
+  - car_wheels
   - 
   - 
   - 

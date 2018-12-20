@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 50059663463137602}
   m_Layer: 0
   m_Name: Kiste02
-  m_TagString: Untagged
+  m_TagString: boxes
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
