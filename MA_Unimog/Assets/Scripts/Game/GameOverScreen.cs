@@ -2,14 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class VictoryScreen : MonoBehaviour {
+public class GameOverScreen : MonoBehaviour {
 
-    public void SetRating(int rating)
-    {
-
-    }
-
-	public void RestartLevel()
+    public void RestartLevel()
     {
 
     }
@@ -19,10 +14,6 @@ public class VictoryScreen : MonoBehaviour {
 
     }
 
-    public void NextLevel()
-    {
-
-    }
 
     public void LevelSelection()
     {
