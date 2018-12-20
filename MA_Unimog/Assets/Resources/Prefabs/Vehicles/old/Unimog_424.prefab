@@ -294,7 +294,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controller: {fileID: 0}
   driveJoystick: {fileID: 0}
-  tiltJoystick: {fileID: 0}
   frontWheelAnimator: {fileID: 95102975104888320, guid: 6275ef808b7ed4fc785ba144711c2b77,
     type: 2}
   backWheelAnimator: {fileID: 95164190067678506, guid: 6275ef808b7ed4fc785ba144711c2b77,
