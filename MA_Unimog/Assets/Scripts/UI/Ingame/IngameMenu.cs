@@ -3,6 +3,24 @@
 public class IngameMenu : MonoBehaviour {
 
     private GameManager gm;
+    [SerializeField] private UIStatusElement timeTxt;
+    [SerializeField] private UIStatusElement boxTxt;
+    [SerializeField] private UIStatusElement fuelTxt;
+
+    public void SetTime(int time)
+    {
+        timeTxt.SetText("" + time + "s");
+    }
+
+    public void SetBoxAmount(int amount)
+    {
+        boxTxt.SetText("" + amount);
+    }
+
+    public void SetFuel(float fuel)
+    {
+        fuelTxt.SetText("" + fuel + "l");
+    }
 
     public void LoadMenuScene()
     {
