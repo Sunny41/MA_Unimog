@@ -1,5 +1,7 @@
 ﻿using LitJson;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Game : MonoBehaviour {
 
@@ -7,11 +9,13 @@ public class Game : MonoBehaviour {
     [SerializeField] private Transform spawn;
     [SerializeField] private VictoryScreen victoryScreen;
     //[SerializedField] private GameOverScreen gameOverScreen;
+    [SerializeField] private Text countdownTxt;
 
     private GameManager gameManager;
     private IngameMenu ingameMenu;
-    private float counter;
-    private int time;
+    private float secondCounter;
+    private int levelTime;
+    private int countDown;
 
     private bool updateGame;
 
@@ -35,17 +39,19 @@ public class Game : MonoBehaviour {
         {
             if(levelData[i]["sceneId"].ToString() == sceneId)
             {
-                time = (int)levelData[i]["time"];
+                levelTime = (int)levelData[i]["time"];
             }
             
         }
 
         ingameMenu = GameObject.Find("IngameMenu").GetComponent<IngameMenu>();
-        ingameMenu.SetTime(time);
+        ingameMenu.SetTime(levelTime);
 
 
-        counter = 1f;
-        updateGame = true;
+        secondCounter = 1f;
+        updateGame = false;
+        countDown = 3;
+        countdownTxt.text = "" + countDown;
     }
 
     public void ReachedFinishEvent()
@@ -55,27 +61,63 @@ public class Game : MonoBehaviour {
 
     public void RestartLevel()
     {
-
+        /*
+        countdownTxt.gameObject.SetActive(false);
+        countDown = 3;
+        countdownTxt.text = "" + countDown;
+        updateGame = false;
+        StartLevelCountdown();
+        */
+        gameManager.LoadLevelScene();
     }
 	
 	void Update () {
+        StartLevelCountdown();
+
         if (updateGame)
         {
-            counter -= Time.deltaTime;
-            if (counter <= 0)
+            secondCounter -= Time.deltaTime;
+            if (secondCounter <= 0)
             {
-                time--;
-                ingameMenu.SetTime(time);
-                counter = 1f;
+                levelTime--;
+                ingameMenu.SetTime(levelTime);
+                secondCounter = 1f;
             }
 
             CheckGameOver();
         }
 	}
 
+    private void StartLevelCountdown()
+    {
+        if (updateGame)
+        {
+            return;
+        }
+
+        secondCounter -= Time.deltaTime;
+        if(secondCounter <= 0 && countDown > 0)
+        {
+            secondCounter = 1f;
+            countDown--;
+            countdownTxt.text = "" + countDown;
+        }
+
+        if(countDown == 0)
+        {
+            countdownTxt.text = "Los!";
+        }
+
+        if(countDown == 0 && secondCounter <= 0)
+        {
+            updateGame = true;
+            countdownTxt.gameObject.SetActive(false);
+        }
+    }
+
     private void CheckGameOver()
     {
-        if(time <= 0)
+        if(levelTime <= 0)
         {
             Debug.Log("GAME OVER");
             updateGame = false;
@@ -84,7 +126,7 @@ public class Game : MonoBehaviour {
 
     private void CheckVictory()
     {
-        if(time > 0)
+        if(levelTime > 0)
         {
             updateGame = false;
             victoryScreen.gameObject.SetActive(true);

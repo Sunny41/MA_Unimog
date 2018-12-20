@@ -775,6 +775,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e740fa8db12659448b910d92446701e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeTxt: {fileID: 114417956992004194}
+  boxTxt: {fileID: 114619385691907874}
+  fuelTxt: {fileID: 114861997418887814}
 --- !u!114 &114387426336972930
 MonoBehaviour:
   m_ObjectHideFlags: 1
