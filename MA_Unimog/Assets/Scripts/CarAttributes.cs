@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CarAttributes : MonoBehaviour {
+public class CarAttributes : MonoBehaviour
+{
 
     public Transform cargoCheck;
     public LayerMask whatIsBox;
@@ -11,7 +12,8 @@ public class CarAttributes : MonoBehaviour {
     private int boxes = 0;
 
 
-    public float GetFuelStatus(){
+    public float GetFuelStatus()
+    {
         return this.fuel;
     }
 
@@ -43,6 +45,6 @@ public class CarAttributes : MonoBehaviour {
         }
 
         this.boxes = boxesTemp;
-        Debug.Log(GetBoxesAmount());
+        // Debug.Log([CarAttributes]: GetBoxesAmount());
     }
 }
