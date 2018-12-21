@@ -1,10 +1,11 @@
 using UnityEngine;
+using Cinemachine;
 using System.Collections;
 using UnityStandardAssets.CrossPlatformInput;
 
 public class CarController : MonoBehaviour
 {
-    public Joystick joystick;
+
     public Transform groundCheck;
     public Transform ceilingCheck;
 
@@ -18,17 +19,30 @@ public class CarController : MonoBehaviour
 
     public Rigidbody2D rb;
 
+    private Joystick joystick;
+    private CinemachineVirtualCamera CMcam;
+
     private bool grounded;
-    const float groundedRadius = .2f;
+    private const float groundedRadius = .2f;
 
     private bool tippedOver;
-    const float ceilingRadius = .2f;
 
     private float movement = 0f;
     private float rotation = 0f;
 
     private float gameOverCounter = 0;
 
+
+    void Start()
+    {
+        //Unimog registers itself to Camera
+        CMcam = GameObject.Find("CM vcam1").GetComponent<CinemachineVirtualCamera>();
+        CMcam.m_Follow = this.transform;
+        CMcam.m_LookAt = this.transform;
+
+        //Unimog uses Joystick
+        joystick = GameObject.Find("drive_joystick").GetComponent<FixedJoystick>();
+    }
     void Update()
     {
         /**
@@ -40,7 +54,6 @@ public class CarController : MonoBehaviour
         /**
         * Mobileinputs 
         */
-        // Joystick sollte über GameManager zugeteilt werden
         movement = -this.joystick.Horizontal * driveSpeed;
         rotation = CrossPlatformInputManager.GetAxis("Vertical");
 

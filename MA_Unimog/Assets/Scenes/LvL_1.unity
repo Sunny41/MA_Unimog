@@ -156,7 +156,7 @@ Prefab:
         type: 2}
       propertyPath: joystick
       value: 
-      objectReference: {fileID: 371205966}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9c27713a4dbc748c58379076ba76d07d, type: 2}
   m_IsPrefabAsset: 0
@@ -298,7 +298,7 @@ Transform:
   - {fileID: 1075780329}
   - {fileID: 67588926}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &135842597
 GameObject:
@@ -1055,12 +1055,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &371205966 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 114587586304229238, guid: 811f329410007444cbb247200c98dabd,
-    type: 2}
-  m_PrefabInternal: {fileID: 1224410128}
-  m_Script: {fileID: 11500000, guid: cecce8d3f549de045bea5fd79de9e7cb, type: 3}
 --- !u!1 &404726345
 GameObject:
   m_ObjectHideFlags: 0
@@ -1198,7 +1192,7 @@ Transform:
   - {fileID: 1738195972}
   - {fileID: 232223634}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!60 &449577214
 PolygonCollider2D:
@@ -3143,7 +3137,7 @@ Prefab:
     - target: {fileID: 224090352979635554, guid: 811f329410007444cbb247200c98dabd,
         type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 224090352979635554, guid: 811f329410007444cbb247200c98dabd,
         type: 2}
@@ -3721,8 +3715,8 @@ MonoBehaviour:
   m_StreamingVersion: 20170927
   m_Priority: 10
   m_StandbyUpdate: 2
-  m_LookAt: {fileID: 26340388}
-  m_Follow: {fileID: 26340388}
+  m_LookAt: {fileID: 0}
+  m_Follow: {fileID: 0}
   m_Lens:
     FieldOfView: 40
     OrthographicSize: 3
