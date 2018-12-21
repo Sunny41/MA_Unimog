@@ -6,6 +6,17 @@ public class IngameMenu : MonoBehaviour {
     [SerializeField] private UIStatusElement timeTxt;
     [SerializeField] private UIStatusElement boxTxt;
     [SerializeField] private UIStatusElement fuelTxt;
+    [SerializeField] private GameObject ingameMenuDisplay;
+
+    public void ShowIngameMenu()
+    {
+        ingameMenuDisplay.SetActive(true);
+    }
+
+    public void HideIngameMenu()
+    {
+        ingameMenuDisplay.SetActive(false);
+    }
 
     public void SetTime(int time)
     {

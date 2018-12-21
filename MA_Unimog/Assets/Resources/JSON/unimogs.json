@@ -6,7 +6,7 @@
     "fuel": 1,
 	"wheight": 1,
 	"sprite": "Baureihe_2010",
-	"prefab": "Unimog_2010",
+	"prefab": "Baureihe_2010",
 	"nomenclature":{
 		"sprite": "Baureihe_2010",
 		"year": 1951,
@@ -31,7 +31,7 @@
     "fuel": 3,
 	"wheight": 3,
 	"sprite": "Baureihe_424",
-	"prefab": "Unimog_424",
+	"prefab": "Baureihe_424",
 	"nomenclature":{
 		"sprite": "Baureihe_424",
 		"year": 1976,
@@ -56,7 +56,7 @@
     "fuel": 5,
 	"wheight": 3,
 	"sprite": "Baureihe_405",
-	"prefab": "Unimog_405",
+	"prefab": "Baureihe_405",
 	"nomenclature":{
 		"sprite": "Baureihe_405",
 		"year": 2007,

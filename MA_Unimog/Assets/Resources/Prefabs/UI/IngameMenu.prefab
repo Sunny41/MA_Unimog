@@ -778,6 +778,7 @@ MonoBehaviour:
   timeTxt: {fileID: 114417956992004194}
   boxTxt: {fileID: 114619385691907874}
   fuelTxt: {fileID: 114861997418887814}
+  ingameMenuDisplay: {fileID: 1059465171117578}
 --- !u!114 &114387426336972930
 MonoBehaviour:
   m_ObjectHideFlags: 1
