@@ -36,8 +36,8 @@ public class CarController : MonoBehaviour
         /**
          * Tastaturinputs    
          */
-        //movement = -Input.GetAxis("Horizontal") * driveSpeed;
-        //rotation = Input.GetAxisRaw("Vertical"); 
+        // movement = -Input.GetAxis("Horizontal") * driveSpeed;
+        // rotation = Input.GetAxisRaw("Vertical");
 
         /**
         * Mobileinputs
