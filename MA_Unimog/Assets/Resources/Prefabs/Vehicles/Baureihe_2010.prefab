@@ -775,7 +775,8 @@ MonoBehaviour:
   whatIsBox:
     serializedVersion: 2
     m_Bits: 4096
-  fuel: 500
+  fuel: 5000
+  fuelConsumption: 10
 --- !u!212 &212210056621106888
 SpriteRenderer:
   m_ObjectHideFlags: 1

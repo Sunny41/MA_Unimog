@@ -8,6 +8,7 @@ public class CarAttributes : MonoBehaviour
     public Transform cargoCheck;
     public LayerMask whatIsBox;
     public float fuel = 500f;
+    public float fuelConsumption = 10f;
 
     private int boxes = 0;
 
@@ -25,6 +26,11 @@ public class CarAttributes : MonoBehaviour
     public int GetBoxesAmount()
     {
         return this.boxes;
+    }
+
+    public void consumeFuel()
+    {
+        this.fuel -= fuelConsumption;
     }
 
     private void Update()

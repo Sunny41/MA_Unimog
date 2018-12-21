@@ -46,8 +46,8 @@ public class CarController : MonoBehaviour
     void Update()
     {
         /**
-         * Tastaturinputs    
-         */
+        * Tastaturinputs    
+        */
         // movement = -Input.GetAxis("Horizontal") * driveSpeed;
         // rotation = Input.GetAxisRaw("Vertical");
 
@@ -56,7 +56,6 @@ public class CarController : MonoBehaviour
         */
         movement = -this.joystick.Horizontal * driveSpeed;
         rotation = CrossPlatformInputManager.GetAxis("Vertical");
-
     }
 
     void FixedUpdate()
@@ -70,14 +69,6 @@ public class CarController : MonoBehaviour
             if (colliders[i].gameObject != gameObject)
                 grounded = true;
         }
-
-        // colliders = Physics2D.OverlapCircleAll(ceilingCheck.position, ceilingRadius, whatIsGround);
-        // for (int i = 0; i < colliders.Length; i++)
-        // {
-        //     if (colliders[i].gameObject != gameObject)
-        //         tippedOver = true;
-        // }
-
         tippedOver = this.ceilingCheck.GetComponent<Collider2D>().IsTouchingLayers(whatIsGround);
         // Debug.Log("[CarController]: " + tippedOver);
 
@@ -97,13 +88,14 @@ public class CarController : MonoBehaviour
         else
         {
             gameOverCounter = 0;
+            CarAttributes ca = this.GetComponentInParent<CarAttributes>();
 
-            if (movement == 0f || tippedOver)
+            if (movement == 0f || tippedOver || ca.GetFuelStatus() <= 0f)
             {
                 backWheel.useMotor = false;
                 frontWheel.useMotor = false;
             }
-            else if (grounded && !tippedOver)
+            else if (grounded && !tippedOver && ca.GetFuelStatus() > 0f)
             {
                 backWheel.useMotor = true;
                 frontWheel.useMotor = true;
@@ -111,6 +103,8 @@ public class CarController : MonoBehaviour
                 JointMotor2D motor = new JointMotor2D { motorSpeed = movement, maxMotorTorque = 10000 };
                 backWheel.motor = motor;
                 frontWheel.motor = motor;
+
+                ca.consumeFuel();
             }
 
             rb.AddTorque(-rotation * rotationSpeed * Time.fixedDeltaTime);
