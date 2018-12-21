@@ -14,5 +14,9 @@ public class FuelBehaviour : MonoBehaviour
             // Debug.Log("[FuelBehaviour]: " + collision.GetComponent<CarAttributes>().GetFuelStatus());
             Destroy(this.gameObject);
         }
+        else
+        {
+            return;
+        }
     }
 }
