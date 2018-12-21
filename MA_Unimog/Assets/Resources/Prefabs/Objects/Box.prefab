@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 50558645933789532}
   m_Layer: 12
   m_Name: Box
-  m_TagString: boxes
+  m_TagString: Box
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

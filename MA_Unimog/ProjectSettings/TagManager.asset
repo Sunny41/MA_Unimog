@@ -4,7 +4,8 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - boxes
+  - Fuel
+  - Box
   layers:
   - Default
   - TransparentFX

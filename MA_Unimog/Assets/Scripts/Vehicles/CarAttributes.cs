@@ -27,12 +27,20 @@ public class CarAttributes : MonoBehaviour
         return this.boxes;
     }
 
+    private void Update()
+    {
+        // Collider2D collider = this.GetComponentInChildren<Collider2D>();
+        // if (collider.IsTouching(GameObject.FindGameObjectWithTag("Fuel").GetComponent<Collider2D>()))
+        // {
+        //     float fuelAmountToAdd = GameObject.FindGameObjectWithTag("Fuel").GetComponent<FuelBehaviour>().fuelValue;
+        //     // Debug.Log(fuelAmountToAdd);
+        //     this.AddFuel(fuelAmountToAdd);
+        //     Destroy(GameObject.FindGameObjectWithTag("Fuel"));
+        // };
+    }
     private void FixedUpdate()
     {
-
-        //Debug.Log(GameObject.FindGameObjectsWithTag("boxes"));
-        GameObject[] boxesOnCar = GameObject.FindGameObjectsWithTag("boxes");
-
+        GameObject[] boxesOnCar = GameObject.FindGameObjectsWithTag("Box");
         Collider2D collider = cargoCheck.GetComponentInParent<Collider2D>();
 
         int boxesTemp = 0;
@@ -43,7 +51,6 @@ public class CarAttributes : MonoBehaviour
                 boxesTemp++;
             }
         }
-
         this.boxes = boxesTemp;
         // Debug.Log([CarAttributes]: GetBoxesAmount());
     }

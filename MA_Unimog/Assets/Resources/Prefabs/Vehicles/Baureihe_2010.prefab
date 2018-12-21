@@ -28,7 +28,7 @@ GameObject:
   - component: {fileID: 114954436637250064}
   m_Layer: 22
   m_Name: Baureihe_2010
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -750,7 +750,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bf12153ba5f64535a491bd205265622, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  joystick: {fileID: 0}
   groundCheck: {fileID: 4887369681271714}
   ceilingCheck: {fileID: 4002227670204594}
   whatIsGround:
