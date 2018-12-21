@@ -4,9 +4,7 @@ using UnityStandardAssets.CrossPlatformInput;
 
 public class CarController : MonoBehaviour
 {
-
     public Joystick joystick;
-
     public Transform groundCheck;
     public Transform ceilingCheck;
 
@@ -40,9 +38,10 @@ public class CarController : MonoBehaviour
         // rotation = Input.GetAxisRaw("Vertical");
 
         /**
-        * Mobileinputs
+        * Mobileinputs 
         */
-        movement = -joystick.Horizontal * driveSpeed;
+        // Joystick sollte über GameManager zugeteilt werden
+        movement = -this.joystick.Horizontal * driveSpeed;
         rotation = CrossPlatformInputManager.GetAxis("Vertical");
 
     }
@@ -67,7 +66,7 @@ public class CarController : MonoBehaviour
         // }
 
         tippedOver = this.ceilingCheck.GetComponent<Collider2D>().IsTouchingLayers(whatIsGround);
-        Debug.Log("[CarController]: " + tippedOver);
+        // Debug.Log("[CarController]: " + tippedOver);
 
 
         if (tippedOver)
