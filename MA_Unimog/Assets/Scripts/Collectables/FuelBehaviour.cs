@@ -10,13 +10,13 @@ public class FuelBehaviour : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            collision.GetComponent<CarAttributes>().AddFuel(this.fuelValue);
-            // Debug.Log("[FuelBehaviour]: " + collision.GetComponent<CarAttributes>().GetFuelStatus());
-            Destroy(this.gameObject);
-        }
-        else
-        {
-            return;
+            if (collision.GetComponent<CarAttributes>() != null)
+            {
+                collision.GetComponent<CarAttributes>().AddFuel(this.fuelValue);
+                // Debug.Log("[FuelBehaviour]: " + collision.GetComponent<CarAttributes>().GetFuelStatus());
+                Destroy(this.gameObject);
+            }
+
         }
     }
 }
