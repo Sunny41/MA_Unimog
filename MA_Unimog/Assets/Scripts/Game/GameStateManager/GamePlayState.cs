@@ -12,7 +12,6 @@ public class GamePlayState : GameState
     {
         this.ingameMenu = ingameMenu;
         this.levelTime = levelTime;
-
         Debug.Log("GAMEPLAY STATE");
     }
 

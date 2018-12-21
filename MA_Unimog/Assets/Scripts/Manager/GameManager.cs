@@ -66,6 +66,12 @@ public class GameManager : MonoBehaviour {
         SetLandscapeOrientation();
     }
 
+    public void LoadLevel(string sceneName)
+    {
+        SceneManager.LoadScene(sceneName);
+        SetLandscapeOrientation();
+    }
+
     public void SetUnimogPrefabPath(string prefabPath)
     {
         this.unimogPrefabPath = prefabPath;
