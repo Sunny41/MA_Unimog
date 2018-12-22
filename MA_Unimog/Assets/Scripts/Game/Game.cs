@@ -1,7 +1,5 @@
-﻿using LitJson;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
 public class Game : MonoBehaviour {
 
@@ -14,16 +12,13 @@ public class Game : MonoBehaviour {
     [SerializeField] private IngameMenu ingameMenu;
     [SerializeField] private InputManager inputManager;
 
-    private GamePlayState gamePlayState;
+    //Current level
+    private Level currentLevel;
 
     //private stuff
     private GameState currentState;
     private GameManager gameManager;
-    private float secondCounter;
-    private int levelTime;
-    private int countDown;
-
-    private bool updateGame;
+    private GamePlayState gamePlayState;
 
     void Start () {
         InitializeLevel();
@@ -59,20 +54,11 @@ public class Game : MonoBehaviour {
         //Load unimog prefab
         GameObject obj = Instantiate(Resources.Load("Prefabs/Vehicles/" + gameManager.GetUnimogPrefabPath(), typeof(GameObject)), player.transform) as GameObject;
         CarAttributes carAttribs = obj.GetComponent<CarAttributes>();
+
         //Load level informations
-        string sceneId = gameManager.GetSceneId();
-        TextAsset jsonFile = Resources.Load<TextAsset>("JSON/levels") as TextAsset;
-        JsonData levelData = JsonMapper.ToObject(jsonFile.text);
-        for (int i = 0; i < levelData.Count; i++)
-        {
-            if (levelData[i]["sceneId"].ToString() == sceneId)
-            {
-                levelTime = (int)levelData[i]["time"];
-            }
+        currentLevel = new Level(gameManager.GetSceneId());
 
-        }
-
-        gamePlayState = new GamePlayState(this, ingameMenu, levelTime, carAttribs);
+        gamePlayState = new GamePlayState(this, ingameMenu, currentLevel, carAttribs);
     }
 
     public void LoadMainMenu()
@@ -82,7 +68,17 @@ public class Game : MonoBehaviour {
 
     public void LoadNextLevel()
     {
-
+        Level nextLevel = currentLevel.NextLevel();
+        if(nextLevel != null)
+        {
+            Debug.Log("Load next level " + nextLevel.GetId() + " " + nextLevel.GetSceneId());
+            //gameManager.LoadLevel(nextLevel.GetSceneId());
+        }
+        else
+        {
+            Debug.Log("THERE IS NO NEXT LEVEL");
+        }
+        
     }
    
     void Update()

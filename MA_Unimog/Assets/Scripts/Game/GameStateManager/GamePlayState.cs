@@ -1,19 +1,17 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class GamePlayState : GameState
 {
     private CarAttributes carAttributes;
     private float secondCounter;
     private IngameMenu ingameMenu;
-    private int levelTime;
+    private Level level;
     private int levelTimeCounter;
 
-    public GamePlayState(Game game, IngameMenu ingameMenu, int levelTime, CarAttributes carAttribs) : base(game)
+    public GamePlayState(Game game, IngameMenu ingameMenu, Level level, CarAttributes carAttribs) : base(game)
     {
         this.ingameMenu = ingameMenu;
-        this.levelTime = levelTime;
+        this.level = level;
         this.carAttributes = carAttribs;
 
         Initialize();
@@ -21,8 +19,8 @@ public class GamePlayState : GameState
 
     public void Initialize()
     {
-        levelTimeCounter = levelTime;
-        ingameMenu.SetTime(levelTime);
+        levelTimeCounter = level.GetLevelTime();
+        ingameMenu.SetTime(levelTimeCounter);
         ingameMenu.SetBoxAmount(carAttributes.GetBoxesAmount());
         ingameMenu.SetFuel(carAttributes.GetFuelStatus());
     }
@@ -46,7 +44,7 @@ public class GamePlayState : GameState
 
     private void CheckGameOver()
     {
-        if (levelTime <= 0 || carAttributes.GetFuelStatus() <= 0)
+        if (levelTimeCounter <= 0 || carAttributes.GetFuelStatus() <= 0)
         {
             Debug.Log("GAME OVER");
         }

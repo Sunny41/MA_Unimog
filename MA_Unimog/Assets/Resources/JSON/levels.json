@@ -3,19 +3,25 @@
     "id": 1,
 	"sceneId":"Lvl_test",
 	"level": 1,
-	"time": 20
+	"nextLevelId":2,
+	"time": 20,
+	"unimogBoxes": 1
   },
   "Level2": {
     "id": 2,
-	"sceneId":"LvL_0_Tutorial",
-	"level": 2,
-	"time": 20
+	"sceneId":"LvL_1",
+	"level": 2,,
+	"nextLevelId":3,
+	"time": 20,
+	"unimogBoxes": 2
   }
   ,
   "Level3": {
     "id": 3,
-	"sceneId":"LvL_0_Tutorial",
+	"sceneId":"LvL_2",,
+	"nextLevelId":null,
 	"level": 3,
-	"time": 25
+	"time": 25,
+	"unimogBoxes": 3
   }
 }
