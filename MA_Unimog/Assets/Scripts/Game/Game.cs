@@ -35,28 +35,15 @@ public class Game : MonoBehaviour {
     
     public void RestartLevel()
     {
+        SetCountdownState();
+
         gameManager.LoadLevelScene();
 
         //Set Player to spawn point
         Vector2 position = new Vector2(spawn.position.x, spawn.position.y + 0.5f);
         player.transform.position = position;
 
-        //Load level informations
-        string sceneId = gameManager.GetSceneId();
-        TextAsset jsonFile = Resources.Load<TextAsset>("JSON/levels") as TextAsset;
-        JsonData levelData = JsonMapper.ToObject(jsonFile.text);
-        for (int i = 0; i < levelData.Count; i++)
-        {
-            if (levelData[i]["sceneId"].ToString() == sceneId)
-            {
-                levelTime = (int)levelData[i]["time"];
-            }
-
-        }
-
-        ingameMenu.SetTime(levelTime);
-
-        gamePlayState = new GamePlayState(this, ingameMenu, levelTime);
+        gamePlayState.Initialize();
     }
 
     private void InitializeLevel()
@@ -71,7 +58,7 @@ public class Game : MonoBehaviour {
 
         //Load unimog prefab
         GameObject obj = Instantiate(Resources.Load("Prefabs/Vehicles/" + gameManager.GetUnimogPrefabPath(), typeof(GameObject)), player.transform) as GameObject;
-        
+        CarAttributes carAttribs = obj.GetComponent<CarAttributes>();
         //Load level informations
         string sceneId = gameManager.GetSceneId();
         TextAsset jsonFile = Resources.Load<TextAsset>("JSON/levels") as TextAsset;
@@ -85,9 +72,7 @@ public class Game : MonoBehaviour {
 
         }
 
-        ingameMenu.SetTime(levelTime);
-
-        gamePlayState = new GamePlayState(this, ingameMenu, levelTime);
+        gamePlayState = new GamePlayState(this, ingameMenu, levelTime, carAttribs);
     }
 
     public void LoadMainMenu()

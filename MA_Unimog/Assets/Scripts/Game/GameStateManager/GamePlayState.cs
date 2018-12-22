@@ -4,15 +4,27 @@ using UnityEngine;
 
 public class GamePlayState : GameState
 {
+    private CarAttributes carAttributes;
     private float secondCounter;
     private IngameMenu ingameMenu;
     private int levelTime;
+    private int levelTimeCounter;
 
-    public GamePlayState(Game game, IngameMenu ingameMenu, int levelTime) : base(game)
+    public GamePlayState(Game game, IngameMenu ingameMenu, int levelTime, CarAttributes carAttribs) : base(game)
     {
         this.ingameMenu = ingameMenu;
         this.levelTime = levelTime;
-        Debug.Log("GAMEPLAY STATE");
+        this.carAttributes = carAttribs;
+
+        Initialize();
+    }
+
+    public void Initialize()
+    {
+        levelTimeCounter = levelTime;
+        ingameMenu.SetTime(levelTime);
+        ingameMenu.SetBoxAmount(carAttributes.GetBoxesAmount());
+        ingameMenu.SetFuel(carAttributes.GetFuelStatus());
     }
 
     public override void Update()
@@ -20,17 +32,21 @@ public class GamePlayState : GameState
         secondCounter -= Time.deltaTime;
         if (secondCounter <= 0)
         {
-            levelTime--;
-            ingameMenu.SetTime(levelTime);
+            levelTimeCounter--;
+            ingameMenu.SetTime(levelTimeCounter);
             secondCounter = 1f;
         }
+
+        ingameMenu.SetFuel(carAttributes.GetFuelStatus());
+
+        ingameMenu.SetBoxAmount(carAttributes.GetBoxesAmount());
 
         CheckGameOver();
     }
 
     private void CheckGameOver()
     {
-        if (levelTime <= 0)
+        if (levelTime <= 0 || carAttributes.GetFuelStatus() <= 0)
         {
             Debug.Log("GAME OVER");
         }

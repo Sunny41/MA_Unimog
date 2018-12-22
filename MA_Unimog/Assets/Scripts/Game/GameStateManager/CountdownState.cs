@@ -15,6 +15,7 @@ public class CountdownState : GameState {
         countdownTxt.gameObject.SetActive(true);
         secondCounter = 1f;
         countDown = 3;
+        countdownTxt.text = "" + countDown;
         Debug.Log("COUNTDOWN STATE");
     }
 
@@ -36,6 +37,7 @@ public class CountdownState : GameState {
         if (countDown == 0 && secondCounter <= 0)
         {
             countdownTxt.gameObject.SetActive(false);
+            countdownTxt.text = "";
             game.SetGamePlayState();
         }
     }
