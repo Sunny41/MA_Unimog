@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class Game : MonoBehaviour {
@@ -9,8 +10,6 @@ public class Game : MonoBehaviour {
     [SerializeField] private VictoryScreen victoryScreen;
     [SerializeField] private GameOverScreen gameOverScreen;
     [SerializeField] private Text countdownTxt;
-    [SerializeField] private IngameMenu ingameMenu;
-    [SerializeField] private InputManager inputManager;
 
     //Current level
     private Level currentLevel;
@@ -19,16 +18,33 @@ public class Game : MonoBehaviour {
     private GameState currentState;
     private GameManager gameManager;
     private GamePlayState gamePlayState;
+    private UnityAction victoryListener;
+    private UnityAction gameOverListener;
+    private UnityAction restartListener;
+    private UnityAction openInventoryListener;
+    private UnityAction closeInventoryListener;
 
-    void Start () {
+    void Awake()
+    {
+        victoryListener = new UnityAction(Victory);
+        gameOverListener = new UnityAction(GameOver);
+        restartListener = new UnityAction(RestartLevel);
+        openInventoryListener = new UnityAction(SetMenuState);
+        closeInventoryListener = new UnityAction(SetGamePlayState);
+
+        EventListener.StartListening("VictoryEvent", victoryListener);
+        EventListener.StartListening("GameOverEvent", gameOverListener);
+        EventListener.StartListening("RestartLevelEvent", restartListener);
+        EventListener.StartListening("OpenInventoryEvent", openInventoryListener);
+        EventListener.StartListening("CloseInventoryEvent", closeInventoryListener);
+    }
+
+    void Start()
+    {
         InitializeLevel();
     }
-
-    public void ReachedFinishEvent()
-    {
-    }
-    
-    public void RestartLevel()
+            
+    private void RestartLevel()
     {
         SetCountdownState();
 
@@ -58,7 +74,17 @@ public class Game : MonoBehaviour {
         //Load level informations
         currentLevel = new Level(gameManager.GetSceneId());
 
-        gamePlayState = new GamePlayState(this, ingameMenu, currentLevel, carAttribs);
+        gamePlayState = new GamePlayState(this, currentLevel, carAttribs);
+    }
+
+    private void GameOver()
+    {
+        gameOverScreen.gameObject.SetActive(true);
+    }
+
+    private void Victory()
+    {
+        victoryScreen.gameObject.SetActive(true);
     }
 
     public void LoadMainMenu()
@@ -89,19 +115,18 @@ public class Game : MonoBehaviour {
     public void SetGamePlayState()
     {
         currentState = gamePlayState;
-        inputManager.EnableInput();
     }
 
     public void SetMenuState()
     {
-        currentState = new MenuState(this, ingameMenu);
-        inputManager.DisableInput();
+        currentState = new MenuState(this);
     }
 
     public void SetCountdownState()
     {
         currentState = new CountdownState(this, countdownTxt);
-        inputManager.DisableInput();
     }
+
+
     
 }

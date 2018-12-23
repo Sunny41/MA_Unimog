@@ -10,7 +10,7 @@
   "Level2": {
     "id": 2,
 	"sceneId":"LvL_1",
-	"level": 2,,
+	"level": 2,
 	"nextLevelId":3,
 	"time": 20,
 	"unimogBoxes": 2
@@ -18,7 +18,7 @@
   ,
   "Level3": {
     "id": 3,
-	"sceneId":"LvL_2",,
+	"sceneId":"LvL_2",
 	"nextLevelId":null,
 	"level": 3,
 	"time": 25,

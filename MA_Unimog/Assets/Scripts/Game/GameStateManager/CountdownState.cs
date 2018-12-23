@@ -9,16 +9,18 @@ public class CountdownState : GameState {
 
     public CountdownState(Game manager, Text countdownTxt) : base(manager)
     {
+        EventListener.TriggerEvent("DisablePlayerInputEvent");
         this.countdownTxt = countdownTxt;
         countdownTxt.gameObject.SetActive(true);
         secondCounter = 1f;
         countDown = 3;
         countdownTxt.text = "" + countDown;
-        Debug.Log("COUNTDOWN STATE");
     }
 
     public override void Update()
     {
+        EventListener.TriggerEvent("DisablePlayerInputEvent");
+
         secondCounter -= Time.deltaTime;
         if (secondCounter <= 0 && countDown > 0)
         {

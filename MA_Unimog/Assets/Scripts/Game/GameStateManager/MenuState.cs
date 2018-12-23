@@ -1,9 +1,9 @@
 ﻿
 public class MenuState : GameState {
 
-    public MenuState(Game manager, IngameMenu ingameMenu) : base(manager)
+    public MenuState(Game manager) : base(manager)
     {
-        ingameMenu.ShowIngameMenu();
+        EventListener.TriggerEvent("DisablePlayerInputEvent");
     }
 
     public override void Update()

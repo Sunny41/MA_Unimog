@@ -4,13 +4,11 @@ public class GamePlayState : GameState
 {
     private CarAttributes carAttributes;
     private float secondCounter;
-    private IngameMenu ingameMenu;
     private Level level;
     private int levelTimeCounter;
 
-    public GamePlayState(Game game, IngameMenu ingameMenu, Level level, CarAttributes carAttribs) : base(game)
+    public GamePlayState(Game game, Level level, CarAttributes carAttribs) : base(game)
     {
-        this.ingameMenu = ingameMenu;
         this.level = level;
         this.carAttributes = carAttribs;
 
@@ -19,40 +17,39 @@ public class GamePlayState : GameState
 
     public void Initialize()
     {
+        EventListener.TriggerEvent("EnablePlayerInputEvent");
+
         levelTimeCounter = level.GetLevelTime();
-        ingameMenu.SetTime(levelTimeCounter);
-        ingameMenu.SetBoxAmount(carAttributes.GetBoxesAmount());
-        ingameMenu.SetFuel(carAttributes.GetFuelStatus());
+        EventListener.TriggerEvent("SetLevelTimeEvent", levelTimeCounter);
+        EventListener.TriggerEvent("SetFuelAmountEvent", carAttributes.GetFuelStatus());
+        EventListener.TriggerEvent("SetBoxAmountEvent", carAttributes.GetBoxesAmount());
+        carAttributes.SetBoxesAmount(level.GetUnimogBoxes());
     }
 
     public override void Update()
     {
+        EventListener.TriggerEvent("EnablePlayerInputEvent");
+
         secondCounter -= Time.deltaTime;
         if (secondCounter <= 0)
         {
             levelTimeCounter--;
-            ingameMenu.SetTime(levelTimeCounter);
+            EventListener.TriggerEvent("SetLevelTimeEvent", levelTimeCounter);
             secondCounter = 1f;
         }
-
-        ingameMenu.SetFuel(carAttributes.GetFuelStatus());
-
-        ingameMenu.SetBoxAmount(carAttributes.GetBoxesAmount());
+        
+        EventListener.TriggerEvent("SetFuelAmountEvent", carAttributes.GetFuelStatus());
+        EventListener.TriggerEvent("SetBoxAmountEvent", carAttributes.GetBoxesAmount());
 
         CheckGameOver();
     }
 
     private void CheckGameOver()
     {
-        if (levelTimeCounter <= 0 || carAttributes.GetFuelStatus() <= 0)
+        if (levelTimeCounter <= 0 || carAttributes.GetFuelStatus() <= 0 || !carAttributes.GetCanDriveStatus())
         {
-            Debug.Log("GAME OVER");
+            EventListener.TriggerEvent("GameOverEvent");
         }
-    }
-
-    private void CheckVictory()
-    {
-        
     }
 
 }
