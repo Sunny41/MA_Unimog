@@ -8,10 +8,55 @@ public class CarAttributes : MonoBehaviour
     public Transform cargoCheck;
     public LayerMask whatIsBox;
     public float fuel = 500f;
-    public float fuelConsumption = 10f;
 
+    [SerializeField]
+    private float fuelConsumption = 10f;
+
+    private bool canDrive = true;
     private int boxes = 0;
 
+    private InitializeCar ic;
+
+    public void Start()
+    {
+        ic = new InitializeCar();
+    }
+
+    private class InitializeCar : MonoBehaviour
+    {
+        public int boxes = 0;
+        public void SetBoxesAmount(int boxes)
+        {
+            this.boxes = boxes;
+        }
+
+        public int GetBoxesAmount()
+        {
+            return this.boxes;
+        }
+    }
+
+
+    public bool SetBoxesAmount(int boxes) //nach dem ersten setzen der Boxen ungültig!
+    {
+        if (this.ic != null)
+        {
+            this.ic.SetBoxesAmount(boxes);
+            Destroy(ic);
+            return true;
+        }
+        return false;
+    }
+
+    public bool GetCanDriveStatus()
+    {
+        return this.canDrive;
+    }
+
+    public void SetCanDriveStatus(bool status)
+    {
+        this.canDrive = status;
+    }
 
     public float GetFuelStatus()
     {
@@ -28,9 +73,14 @@ public class CarAttributes : MonoBehaviour
         return this.boxes;
     }
 
-    public void consumeFuel()
+    public void ConsumeFuel()
     {
         this.fuel -= fuelConsumption;
+
+        if (this.fuel <= 0)
+        {
+            this.SetCanDriveStatus(false);
+        }
     }
 
     private void Update()

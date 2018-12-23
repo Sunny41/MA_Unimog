@@ -70,7 +70,6 @@ public class CarController : MonoBehaviour
                 grounded = true;
         }
         tippedOver = this.ceilingCheck.GetComponent<Collider2D>().IsTouchingLayers(whatIsGround);
-        // Debug.Log("[CarController]: " + tippedOver);
 
 
         if (tippedOver)
@@ -78,10 +77,8 @@ public class CarController : MonoBehaviour
             gameOverCounter += Time.fixedDeltaTime;
             if (gameOverCounter >= 1f) //anzahl Sekunden an denen der Collider den Boden berühren soll
             {
-                //das hier am besten an einer Zentralen Stelle im GameManager machen
-                // -> z.B. GameManager.setGameOver()
-                Time.timeScale = 0; //Spiel pausieren
-                Debug.Log("[CarController]: GAME OVER!");
+                CarAttributes ca = this.GetComponentInParent<CarAttributes>();
+                ca.SetCanDriveStatus(false);
             }
 
         }
@@ -90,12 +87,12 @@ public class CarController : MonoBehaviour
             gameOverCounter = 0;
             CarAttributes ca = this.GetComponentInParent<CarAttributes>();
 
-            if (movement == 0f || tippedOver || ca.GetFuelStatus() <= 0f)
+            if (movement == 0f || tippedOver || !ca.GetCanDriveStatus())
             {
                 backWheel.useMotor = false;
                 frontWheel.useMotor = false;
             }
-            else if (grounded && !tippedOver && ca.GetFuelStatus() > 0f)
+            else if (grounded && !tippedOver && ca.GetCanDriveStatus())
             {
                 backWheel.useMotor = true;
                 frontWheel.useMotor = true;
@@ -104,7 +101,7 @@ public class CarController : MonoBehaviour
                 backWheel.motor = motor;
                 frontWheel.motor = motor;
 
-                ca.consumeFuel();
+                ca.ConsumeFuel();
             }
 
             rb.AddTorque(-rotation * rotationSpeed * Time.fixedDeltaTime);
