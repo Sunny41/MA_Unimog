@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Finish : MonoBehaviour {
 
@@ -10,7 +8,7 @@ public class Finish : MonoBehaviour {
     {
         if (coll.gameObject.tag == "Player")
         {
-            game.ReachedFinishEvent();
+            EventListener.TriggerEvent("VictoryEvent");
         }
     }
 }
