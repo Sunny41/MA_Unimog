@@ -82,7 +82,7 @@ public class CarController : MonoBehaviour
         if (tippedOver)
         {
             gameOverCounter += Time.fixedDeltaTime;
-            if (gameOverCounter >= 1f) //anzahl Sekunden an denen der Collider den Boden berühren soll
+            if (gameOverCounter >= 1f) //anzahl Sekunden, die der Collider den Boden berühren soll
             {
                 CarAttributes ca = this.GetComponentInParent<CarAttributes>();
                 ca.SetCanDriveStatus(false);
