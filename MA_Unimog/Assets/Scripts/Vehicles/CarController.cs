@@ -11,11 +11,14 @@ public class CarController : MonoBehaviour
 
     public LayerMask whatIsGround;
 
-    public float driveSpeed = 1500f;
+    public float driveSpeed = 2000f;
+
     public float rotationSpeed = 500f;
 
     public WheelJoint2D backWheel;
     public WheelJoint2D frontWheel;
+
+    private JointMotor2D motor;
 
     public Rigidbody2D rb;
 
@@ -42,19 +45,23 @@ public class CarController : MonoBehaviour
 
         //Unimog uses Joystick
         joystick = GameObject.Find("drive_joystick").GetComponent<FixedJoystick>();
+
+        //Initialize Motor
+        this.motor = new JointMotor2D { motorSpeed = 0, maxMotorTorque = 4f };
     }
     void Update()
     {
         /**
         * Tastaturinputs    
         */
-        // movement = -Input.GetAxis("Horizontal") * driveSpeed;
+        // movement = -Input.GetAxis("Horizontal");
         // rotation = Input.GetAxisRaw("Vertical");
 
         /**
         * Mobileinputs 
         */
-        movement = -this.joystick.Horizontal * driveSpeed;
+
+        movement = -this.joystick.Horizontal;
         rotation = CrossPlatformInputManager.GetAxis("Vertical");
     }
 
@@ -97,7 +104,7 @@ public class CarController : MonoBehaviour
                 backWheel.useMotor = true;
                 frontWheel.useMotor = true;
 
-                JointMotor2D motor = new JointMotor2D { motorSpeed = movement, maxMotorTorque = 10000 };
+                this.motor.motorSpeed = movement * driveSpeed;
                 backWheel.motor = motor;
                 frontWheel.motor = motor;
 

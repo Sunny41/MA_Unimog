@@ -212,7 +212,7 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0
   m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 0
@@ -252,7 +252,7 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0
   m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 0
@@ -411,12 +411,8 @@ PolygonCollider2D:
       - {x: 0.45339212, y: -0.26976496}
       - {x: 0.45405984, y: -0.29180023}
       - {x: 0.45339212, y: -0.29246795}
-      - {x: 0.45272437, y: -0.29847756}
-      - {x: 0.45205665, y: -0.30582267}
-      - {x: 0.45205665, y: -0.30782586}
-      - {x: 0.45339212, y: -0.30916134}
-      - {x: 0.53997153, y: -0.29169622}
-      - {x: 0.56877154, y: -0.2769746}
+      - {x: 0.5186755, y: -0.28459755}
+      - {x: 0.5677573, y: -0.2698759}
       - {x: 0.589338, y: -0.25498238}
       - {x: 0.6160299, y: -0.22419539}
       - {x: 0.64051455, y: -0.18173376}
@@ -1126,10 +1122,10 @@ WheelJoint2D:
     m_DampingRatio: 0.7
     m_Frequency: 10
     m_Angle: 90
-  m_UseMotor: 0
+  m_UseMotor: 1
   m_Motor:
     m_MotorSpeed: 0
-    m_MaximumMotorForce: 10000
+    m_MaximumMotorForce: 10
 --- !u!235 &235119404980705224
 WheelJoint2D:
   m_ObjectHideFlags: 1
@@ -1149,7 +1145,7 @@ WheelJoint2D:
     m_DampingRatio: 0.7
     m_Frequency: 10
     m_Angle: 90
-  m_UseMotor: 0
+  m_UseMotor: 1
   m_Motor:
     m_MotorSpeed: 0
-    m_MaximumMotorForce: 10000
+    m_MaximumMotorForce: 10
