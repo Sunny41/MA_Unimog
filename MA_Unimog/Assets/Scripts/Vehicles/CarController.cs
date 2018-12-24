@@ -28,7 +28,7 @@ public class CarController : MonoBehaviour
     private bool grounded;
     private const float groundedRadius = .2f;
 
-    private bool tippedOver;
+    private bool tippedOver = false;
 
     private float movement = 0f;
     private float rotation = 0f;
@@ -60,10 +60,42 @@ public class CarController : MonoBehaviour
         /**
         * Mobileinputs 
         */
-
         movement = -this.joystick.Horizontal;
         rotation = CrossPlatformInputManager.GetAxis("Vertical");
+
+        /**
+        * Camera Zoom Conditions
+        */
+        if (!grounded && tippedOver == false)
+        {
+            StartCoroutine("CameraZoom", "ZOOM_OUT");
+        }
+        else if ((grounded || tippedOver) && CMcam.m_Lens.OrthographicSize != 2.25f)
+        {
+            StartCoroutine("CameraZoom", "ZOOM_IN");
+        }
+
     }
+
+    private IEnumerator CameraZoom(string zoom)
+    {
+        if (zoom.Equals("ZOOM_OUT"))
+        {
+            while (CMcam.m_Lens.OrthographicSize < (2.25f + Mathf.Abs(this.motor.motorSpeed / 1000)))
+            {
+                yield return CMcam.m_Lens.OrthographicSize += 0.0005f;
+            }
+        }
+        if (zoom.Equals("ZOOM_IN"))
+        {
+            while (CMcam.m_Lens.OrthographicSize > 2.25f)
+            {
+                yield return CMcam.m_Lens.OrthographicSize -= 0.01f;
+            }
+        }
+
+    }
+
 
     void FixedUpdate()
     {

@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Fuel
   - Box
+  - Terrain
   layers:
   - Default
   - TransparentFX

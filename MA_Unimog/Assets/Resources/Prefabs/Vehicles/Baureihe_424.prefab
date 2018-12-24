@@ -597,7 +597,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   driveSpeed: 2000
-  rotationSpeed: 500
+  rotationSpeed: 450
   backWheel: {fileID: 235119404980705224}
   frontWheel: {fileID: 235081116410353560}
   rb: {fileID: 50305722497571872}
