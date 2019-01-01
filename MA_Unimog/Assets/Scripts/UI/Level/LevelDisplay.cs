@@ -18,9 +18,9 @@ public class LevelDisplay : MonoBehaviour {
 
     private int levelId;
     private string sceneId;
-    private int level;
+    private string level;
 
-    public void Initialize(LevelSelectMenu levelSelectMenu, GameObject unimogSelectMenu, int levelID, string sceneId, int level)
+    public void Initialize(LevelSelectMenu levelSelectMenu, GameObject unimogSelectMenu, int levelID, string sceneId, string level)
     {
         locked = true;
         //Set level texture

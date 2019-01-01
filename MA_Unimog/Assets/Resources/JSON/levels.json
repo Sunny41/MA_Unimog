@@ -2,7 +2,7 @@
   "Level1": {
     "id": 1,
 	"sceneId":"Lvl_test",
-	"level": 1,
+	"level": "Tutorial",
 	"nextLevelId":2,
 	"time": 20,
 	"unimogBoxes": 1
@@ -10,7 +10,7 @@
   "Level2": {
     "id": 2,
 	"sceneId":"LvL_1",
-	"level": 2,
+	"level": "1",
 	"nextLevelId":3,
 	"time": 20,
 	"unimogBoxes": 2
@@ -20,7 +20,7 @@
     "id": 3,
 	"sceneId":"LvL_2",
 	"nextLevelId":null,
-	"level": 3,
+	"level": "2",
 	"time": 25,
 	"unimogBoxes": 3
   }

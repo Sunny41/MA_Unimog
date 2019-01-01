@@ -18,22 +18,16 @@ public class Game : MonoBehaviour {
     private GameState currentState;
     private GameManager gameManager;
     private GamePlayState gamePlayState;
-    private UnityAction victoryListener;
-    private UnityAction gameOverListener;
     private UnityAction restartListener;
     private UnityAction openInventoryListener;
     private UnityAction closeInventoryListener;
 
     void Awake()
     {
-        victoryListener = new UnityAction(Victory);
-        gameOverListener = new UnityAction(GameOver);
         restartListener = new UnityAction(RestartLevel);
         openInventoryListener = new UnityAction(SetMenuState);
         closeInventoryListener = new UnityAction(SetGamePlayState);
-
-        EventListener.StartListening("VictoryEvent", victoryListener);
-        EventListener.StartListening("GameOverEvent", gameOverListener);
+        
         EventListener.StartListening("RestartLevelEvent", restartListener);
         EventListener.StartListening("OpenInventoryEvent", openInventoryListener);
         EventListener.StartListening("CloseInventoryEvent", closeInventoryListener);
@@ -74,17 +68,7 @@ public class Game : MonoBehaviour {
         //Load level informations
         currentLevel = new Level(gameManager.GetSceneId());
 
-        gamePlayState = new GamePlayState(this, currentLevel, carAttribs);
-    }
-
-    private void GameOver()
-    {
-        gameOverScreen.gameObject.SetActive(true);
-    }
-
-    private void Victory()
-    {
-        victoryScreen.gameObject.SetActive(true);
+        gamePlayState = new GamePlayState(this, currentLevel, carAttribs, victoryScreen, gameOverScreen);
     }
 
     public void LoadMainMenu()
@@ -98,7 +82,7 @@ public class Game : MonoBehaviour {
         if(nextLevel != null)
         {
             Debug.Log("Load next level " + nextLevel.GetId() + " " + nextLevel.GetSceneId());
-            //gameManager.LoadLevel(nextLevel.GetSceneId());
+            gameManager.LoadLevel(nextLevel.GetSceneId());
         }
         else
         {

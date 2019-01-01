@@ -51,3 +51,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad73830a3561fa345ba41b629d3d0186, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mainMenu: {fileID: 0}
+  unimogSelectMenu: {fileID: 0}
+  levelSelectMenu: {fileID: 0}
+  creditsMenu: {fileID: 0}
+  settingsMenu: {fileID: 0}
+  galerieMenu: {fileID: 0}

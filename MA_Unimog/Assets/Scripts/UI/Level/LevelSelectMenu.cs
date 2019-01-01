@@ -33,7 +33,7 @@ public class LevelSelectMenu : MonoBehaviour {
             if (levelDisplay != null)
             {
                 int levelID = (int)levelData[i]["id"];
-                int level = (int)levelData[i]["level"];
+                string level = (string)levelData[i]["level"];
                 string sceneId = (string)levelData[i]["sceneId"];
                                 
                 GameObject obj = (GameObject)Instantiate(levelDisplay, scrollbar.transform);
@@ -66,7 +66,17 @@ public class LevelSelectMenu : MonoBehaviour {
     public void LevelSelected(string sceneId)
     {
         gameObject.SetActive(false);
-        unimogSelectMenu.SetActive(true);
-        gm.SetSceneId(sceneId);
+
+        if (sceneId == "Lvl_test")
+        {
+            gm.SetUnimogPrefabPath("Baureihe_2010");
+            gm.SetSceneId(sceneId);
+            gm.LoadLevel(sceneId);
+        }
+        else
+        {
+            gm.SetSceneId(sceneId);
+            unimogSelectMenu.SetActive(true);
+        }        
     }
 }

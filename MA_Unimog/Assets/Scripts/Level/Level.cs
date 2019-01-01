@@ -5,7 +5,7 @@ public class Level {
 
     private int id;
     private string sceneId;
-    private int level;
+    private string level;
     private int? nextLevel;
     private int time;
     private int unimogBoxes;
@@ -22,7 +22,7 @@ public class Level {
             if (levelData[i]["sceneId"].ToString() == sceneId)
             {
                 id = (int)levelData[i]["id"];
-                level = (int)levelData[i]["level"];
+                level = (string)levelData[i]["level"];
                 nextLevel = (int?)levelData[i]["nextLevelId"];
                 time = (int)levelData[i]["time"];
                 unimogBoxes = (int)levelData[i]["unimogBoxes"];
@@ -42,7 +42,7 @@ public class Level {
             if ((int)levelData[i]["id"] == id)
             {
                 sceneId = (string)levelData[i]["sceneId"];
-                level = (int)levelData[i]["level"];
+                level = (string)levelData[i]["level"];
                 nextLevel = (int?)levelData[i]["nextLevelId"];
                 time = (int)levelData[i]["time"];
                 unimogBoxes = (int)levelData[i]["unimogBoxes"];
@@ -60,7 +60,7 @@ public class Level {
         return sceneId;
     }
 
-    public int GetLevel()
+    public string GetLevel()
     {
         return level;
     }

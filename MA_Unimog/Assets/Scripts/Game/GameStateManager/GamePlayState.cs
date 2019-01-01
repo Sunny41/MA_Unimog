@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.Events;
 
 public class GamePlayState : GameState
 {
@@ -6,12 +7,19 @@ public class GamePlayState : GameState
     private float secondCounter;
     private Level level;
     private int levelTimeCounter;
+    private bool victory;
+    private bool gameOver;
+    private UnityAction victoryListener;
+    private VictoryScreen victoryScreen;
+    private GameOverScreen gameOverScreen;
 
-    public GamePlayState(Game game, Level level, CarAttributes carAttribs) : base(game)
+    public GamePlayState(Game game, Level level, CarAttributes carAttribs, VictoryScreen victoryScreen, GameOverScreen gameOverScreen)
+        : base(game)
     {
         this.level = level;
         this.carAttributes = carAttribs;
-
+        this.victoryScreen = victoryScreen;
+        this.gameOverScreen = gameOverScreen;
         Initialize();
     }
 
@@ -19,36 +27,58 @@ public class GamePlayState : GameState
     {
         EventListener.TriggerEvent("EnablePlayerInputEvent");
 
+        gameOver = false;
+        victory = false;
+        victoryListener = new UnityAction(Victory);
         levelTimeCounter = level.GetLevelTime();
         EventListener.TriggerEvent("SetLevelTimeEvent", levelTimeCounter);
         EventListener.TriggerEvent("SetFuelAmountEvent", carAttributes.GetFuelStatus());
         EventListener.TriggerEvent("SetBoxAmountEvent", carAttributes.GetBoxesAmount());
         carAttributes.SetBoxesAmount(level.GetUnimogBoxes());
+
+        EventListener.StartListening("VictoryEvent", victoryListener);
     }
 
     public override void Update()
     {
         EventListener.TriggerEvent("EnablePlayerInputEvent");
 
-        secondCounter -= Time.deltaTime;
-        if (secondCounter <= 0)
+        if (!victory && !gameOver)
         {
-            levelTimeCounter--;
-            EventListener.TriggerEvent("SetLevelTimeEvent", levelTimeCounter);
-            secondCounter = 1f;
+            secondCounter -= Time.deltaTime;
+            if (secondCounter <= 0)
+            {
+                levelTimeCounter--;
+                EventListener.TriggerEvent("SetLevelTimeEvent", levelTimeCounter);
+                secondCounter = 1f;
+            }
+
+            EventListener.TriggerEvent("SetFuelAmountEvent", carAttributes.GetFuelStatus());
+            EventListener.TriggerEvent("SetBoxAmountEvent", carAttributes.GetBoxesAmount());
+
+            CheckGameOver();
         }
         
-        EventListener.TriggerEvent("SetFuelAmountEvent", carAttributes.GetFuelStatus());
-        EventListener.TriggerEvent("SetBoxAmountEvent", carAttributes.GetBoxesAmount());
+    }
 
-        CheckGameOver();
+    private float CalculateRating()
+    {
+        return carAttributes.GetBoxesAmount() + levelTimeCounter;
+    }
+
+    private void Victory()
+    {
+        victory = true;
+        victoryScreen.gameObject.SetActive(true);
+        victoryScreen.SetRating(CalculateRating());
     }
 
     private void CheckGameOver()
     {
         if (levelTimeCounter <= 0 || carAttributes.GetFuelStatus() <= 0 || !carAttributes.GetCanDriveStatus())
         {
-            EventListener.TriggerEvent("GameOverEvent");
+            gameOver = true;
+            gameOverScreen.gameObject.SetActive(true);
         }
     }
 

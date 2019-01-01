@@ -4,28 +4,10 @@ using UnityEngine;
 
 public class VictoryScreen : MonoBehaviour {
 
-    public void SetRating(int rating)
+    [SerializeField] private LevelDisplayRating levelDisplayRating;
+
+    public void SetRating(float rating)
     {
-
-    }
-
-	public void RestartLevel()
-    {
-
-    }
-
-    public void LoadMainMenu()
-    {
-
-    }
-
-    public void NextLevel()
-    {
-
-    }
-
-    public void LevelSelection()
-    {
-
+        levelDisplayRating.SetRating(rating);
     }
 }
