@@ -73,11 +73,12 @@ public class Game : MonoBehaviour {
 
     public void LoadMainMenu()
     {
-        gameManager.LoadMenuScene();
+        gameManager.LoadMainMenuScene();
     }
 
     public void LoadNextLevel()
     {
+        /*
         Level nextLevel = currentLevel.NextLevel();
         if(nextLevel != null)
         {
@@ -88,6 +89,8 @@ public class Game : MonoBehaviour {
         {
             Debug.Log("THERE IS NO NEXT LEVEL");
         }
+        */
+        gameManager.LoadMainMenuLevelSelectScene();
         
     }
    

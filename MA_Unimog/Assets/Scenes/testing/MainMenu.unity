@@ -1929,7 +1929,7 @@ Prefab:
         type: 2}
       propertyPath: mainMenu
       value: 
-      objectReference: {fileID: 938438492}
+      objectReference: {fileID: 853611737}
     - target: {fileID: 114142391641733480, guid: 5b1796ca34a280f4c895c892226e124a,
         type: 2}
       propertyPath: unimogSelectMenu
@@ -3171,6 +3171,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 948305c52ec7b0c49bf75ba75a01c80e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mainMenu: {fileID: 938438492}
+  unimogSelectMenu: {fileID: 2032695119}
+  levelSelectMenu: {fileID: 1510204664}
+  creditsMenu: {fileID: 1529493071}
+  settingsMenu: {fileID: 593017305}
+  galerieMenu: {fileID: 503610919}
 --- !u!114 &853611738
 MonoBehaviour:
   m_ObjectHideFlags: 0

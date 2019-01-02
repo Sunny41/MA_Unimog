@@ -53,13 +53,15 @@ public class LevelSelectMenu : MonoBehaviour {
         int testCount = 0;
         foreach(GameObject obj in levelDisplayList)
         {
+            obj.GetComponent<LevelDisplay>().UnlockLevel();
+            /*
             testCount++;
             if(testCount <= 2)
             {
                 obj.GetComponent<LevelDisplay>().UnlockLevel();
                 obj.GetComponent<LevelDisplay>().SetRating(1.8f);
             }
-            
+            */
         }
     }
 

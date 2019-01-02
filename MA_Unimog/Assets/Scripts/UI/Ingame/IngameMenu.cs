@@ -66,7 +66,7 @@ public class IngameMenu : MonoBehaviour {
 
     public void LoadMenuScene()
     {
-        GameObject.Find("GameManager").GetComponent<GameManager>().LoadMenuScene();
+        GameObject.Find("GameManager").GetComponent<GameManager>().LoadMainMenuScene();
     }
 
     public void RestartLevel()

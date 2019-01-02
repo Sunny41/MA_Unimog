@@ -14,14 +14,37 @@
 	"nextLevelId":3,
 	"time": 20,
 	"unimogBoxes": 2
-  }
-  ,
+  },
   "Level3": {
     "id": 3,
 	"sceneId":"LvL_2",
-	"nextLevelId":null,
+	"nextLevelId":4,
 	"level": "2",
 	"time": 25,
+	"unimogBoxes": 3
+  },
+  "Level4": {
+    "id": 4,
+	"sceneId":"LvL_3",
+	"nextLevelId":5,
+	"level": "3",
+	"time": 25,
+	"unimogBoxes": 3
+  },
+  "Level5": {
+    "id": 5,
+	"sceneId":"LvL_4",
+	"nextLevelId":6,
+	"level": "4",
+	"time": 35,
+	"unimogBoxes": 3
+  },
+  "Level6": {
+    "id": 6,
+	"sceneId":"LvL_5",
+	"nextLevelId":null,
+	"level": "5",
+	"time": 35,
 	"unimogBoxes": 3
   }
 }

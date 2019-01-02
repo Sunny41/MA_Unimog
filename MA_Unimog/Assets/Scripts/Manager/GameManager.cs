@@ -5,13 +5,9 @@ public class GameManager : MonoBehaviour {
     
     private string unimogPrefabPath;
     private string sceneId;
+    private MenuDisplay menuDisplay;
 
-    [SerializeField] private GameObject mainMenu;
-    [SerializeField] private GameObject unimogSelectMenu;
-    [SerializeField] private GameObject levelSelectMenu;
-    [SerializeField] private GameObject creditsMenu;
-    [SerializeField] private GameObject settingsMenu;
-    [SerializeField] private GameObject galerieMenu;
+    [SerializeField] private MainMenu mainMenu;
 
     //Singleton
     public static GameManager instance;
@@ -25,12 +21,8 @@ public class GameManager : MonoBehaviour {
         }
 
         //activate all menus. They deactivate them self after theri initialisation
-        mainMenu.SetActive(true);
-        unimogSelectMenu.SetActive(true);
-        levelSelectMenu.SetActive(true);
-        creditsMenu.SetActive(true);
-        settingsMenu.SetActive(true);
-        galerieMenu.SetActive(true);
+        menuDisplay = MenuDisplay.MainMenu;
+        mainMenu.InitializeMainMenu();
     }
 
     private void SetPortraitRotation()
@@ -51,10 +43,18 @@ public class GameManager : MonoBehaviour {
         Screen.orientation = ScreenOrientation.Landscape;
     }
 
-    public void LoadMenuScene()
+    public void LoadMainMenuScene()
     {
         SceneManager.LoadSceneAsync("MainMenu");
         SetPortraitRotation();
+        menuDisplay = MenuDisplay.MainMenu;
+    }
+
+    public void LoadMainMenuLevelSelectScene()
+    {
+        SceneManager.LoadSceneAsync("MainMenu");
+        SetPortraitRotation();
+        menuDisplay = MenuDisplay.LevelSelectMenu;
     }
 
     public void LoadLevelScene()
@@ -91,4 +91,15 @@ public class GameManager : MonoBehaviour {
     {
         return sceneId;
     }
+
+    public MenuDisplay GetMenuDisplay()
+    {
+        return menuDisplay;
+    }
+        
+}
+
+public enum MenuDisplay
+{
+    MainMenu, LevelSelectMenu
 }
