@@ -14,16 +14,22 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/LvL_0_Tutorial.unity
     guid: 3d12c9f700f1f452f8eb11f2516fbbf6
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/testing/LvL_test.unity
     guid: e1b0f8b9a9b80be449ac95a118ff2f38
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/LvL_1.unity
     guid: f950e4f391ec84257a0e86005d3f6e4c
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/LvL_2.unity
     guid: 285b3cf1627384988b5ed546f57883fe
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/LvL_3.unity
     guid: 249da35e7b0ed4a3893c5df150c787f4
+  - enabled: 0
+    path: Assets/Scenes/LvL_4.unity
+    guid: e0079d61012a04982b1b046b38944d7a
+  - enabled: 1
+    path: Assets/Scenes/LvL_5.unity
+    guid: 395835f06620246daa3c271043519f9a
   m_configObjects: {}
