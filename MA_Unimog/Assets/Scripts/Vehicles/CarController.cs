@@ -54,13 +54,13 @@ public class CarController : MonoBehaviour
         /**
         * Tastaturinputs    
         */
-        // movement = -Input.GetAxis("Horizontal");
+        movement = -Input.GetAxis("Horizontal");
         // rotation = Input.GetAxisRaw("Vertical");
 
         /**
         * Mobileinputs 
         */
-        movement = -this.joystick.Horizontal;
+        // movement = -this.joystick.Horizontal;
         rotation = CrossPlatformInputManager.GetAxis("Vertical");
 
         /**
