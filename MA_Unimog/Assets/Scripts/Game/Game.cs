@@ -78,20 +78,14 @@ public class Game : MonoBehaviour {
 
     public void LoadNextLevel()
     {
-        /*
-        Level nextLevel = currentLevel.NextLevel();
-        if(nextLevel != null)
+        //Unlock next level. Save data
+        if(currentLevel.NextLevel() != null)
         {
-            Debug.Log("Load next level " + nextLevel.GetId() + " " + nextLevel.GetSceneId());
-            gameManager.LoadLevel(nextLevel.GetSceneId());
+            gameManager.UnlockLevel(currentLevel.NextLevel().GetId(), 0f);
         }
-        else
-        {
-            Debug.Log("THERE IS NO NEXT LEVEL");
-        }
-        */
-        gameManager.LoadMainMenuLevelSelectScene();
         
+        //Load level select menu
+        gameManager.LoadMainMenuLevelSelectScene();
     }
    
     void Update()

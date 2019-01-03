@@ -14,9 +14,11 @@ public class UnimogDisplay : MonoBehaviour {
 
     private int id;
     private string prefabPath;
+    private bool locked;
 
     public void Initialize(UnimogSelectMenu unimogSelectMenu, int id, string prefabPath, string texturePath, string name, int speed, int acceleration, int fuel, int wheight)
     {
+        this.locked = true;
         this.unimogSelectMenu = unimogSelectMenu;
         this.id = id;
         this.prefabPath = prefabPath;
@@ -56,9 +58,21 @@ public class UnimogDisplay : MonoBehaviour {
         wheightSlider.value = wheight;
     }
 
-    public void DebugID()
+    public void UnlockUnimog()
     {
-        Debug.Log("UNIMOGID: " + id);
-        unimogSelectMenu.UnimogSelected(prefabPath);
+        this.locked = false;
+    }
+
+    public void SelectUnimog()
+    {
+        if(!locked)
+        {
+            unimogSelectMenu.UnimogSelected(prefabPath);
+        }        
+    }
+
+    public int GetUnimogId()
+    {
+        return id;
     }
 }

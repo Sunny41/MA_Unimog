@@ -50,18 +50,21 @@ public class LevelSelectMenu : MonoBehaviour {
 
     void CheckLevelUnlocked()
     {
-        int testCount = 0;
-        foreach(GameObject obj in levelDisplayList)
+        JsonData unlockedLevelData = GameObject.Find("GameManager").GetComponent<GameManager>().GetUnlockedLevelData();
+        if (unlockedLevelData != null)
         {
-            obj.GetComponent<LevelDisplay>().UnlockLevel();
-            /*
-            testCount++;
-            if(testCount <= 2)
+            for(int i=0; i<unlockedLevelData.Count; i++)
             {
-                obj.GetComponent<LevelDisplay>().UnlockLevel();
-                obj.GetComponent<LevelDisplay>().SetRating(1.8f);
+                foreach (GameObject obj in levelDisplayList)
+                {
+                    if((int)unlockedLevelData[i]["levelId"] == obj.GetComponent<LevelDisplay>().GetLevelId())
+                    {
+                        obj.GetComponent<LevelDisplay>().UnlockLevel();
+                        float rating = (float)(double)unlockedLevelData[i]["rating"];
+                        obj.GetComponent<LevelDisplay>().SetRating(rating);
+                    }
+                }
             }
-            */
         }
     }
 

@@ -40,7 +40,6 @@ public class LevelDisplay : MonoBehaviour {
     {
         if (!locked)
         {
-            Debug.Log("LEVEL " + level + " SELECTED. SCENEID: " + sceneId);
             levelSelectMenu.LevelSelected(sceneId);
         }        
     }
@@ -55,5 +54,10 @@ public class LevelDisplay : MonoBehaviour {
     public void SetRating(float rating)
     {
         levelRating.SetRating(rating);
+    }
+
+    public int GetLevelId()
+    {
+        return levelId;
     }
 }

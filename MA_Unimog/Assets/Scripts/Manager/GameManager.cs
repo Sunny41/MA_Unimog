@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using LitJson;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour {
@@ -6,6 +7,9 @@ public class GameManager : MonoBehaviour {
     private string unimogPrefabPath;
     private string sceneId;
     private MenuDisplay menuDisplay;
+
+    private JsonData unlockedLevelData;
+    private JsonData unlockedUnimogData;
 
     [SerializeField] private MainMenu mainMenu;
 
@@ -20,9 +24,43 @@ public class GameManager : MonoBehaviour {
             SetPortraitRotation();
         }
 
+        PlayerPrefs.DeleteKey("unlocked_level");
+        //Load unlocked
+        LoadUnlocked();
+
         //activate all menus. They deactivate them self after theri initialisation
         menuDisplay = MenuDisplay.MainMenu;
         mainMenu.InitializeMainMenu();
+    }
+
+    private void LoadUnlocked()
+    {
+        //Load unlocked level
+        string unlockedLevelString = PlayerPrefs.GetString("unlocked_level");
+        if(unlockedLevelString != null && !unlockedLevelString.Equals(""))
+        {
+            unlockedLevelData = JsonMapper.ToObject(unlockedLevelString);
+        }
+        else
+        {
+            //No unlocked level. Unlock tutorial level
+            PlayerPrefs.SetString("unlocked_level", "[{'levelId':1, 'rating':0.0}]");
+            LoadUnlocked();
+        }
+
+        //Load unlocked unimogs
+        string unlockedUnimogString = PlayerPrefs.GetString("unlocked_unimogs");
+        if(unlockedUnimogString != null && !unlockedUnimogString.Equals(""))
+        {
+            unlockedUnimogData = JsonMapper.ToObject(unlockedUnimogString);
+        }
+        else
+        {
+            //No unlocked unimog. unlock the first unimog
+            Debug.Log("NO UNLOCKED UNIMOGS");
+            PlayerPrefs.SetString("unlocked_unimogs", "[{'unimogId':1}]");
+            LoadUnlocked();
+        }
     }
 
     private void SetPortraitRotation()
@@ -41,6 +79,16 @@ public class GameManager : MonoBehaviour {
         Screen.autorotateToPortrait = false;
         Screen.autorotateToPortraitUpsideDown = false;
         Screen.orientation = ScreenOrientation.Landscape;
+    }
+
+    public void UnlockLevel(int levelId, float rating)
+    {
+        unlockedLevelData.Add("{'levelId':" + levelId + ", 'rating':" + rating + "}");
+        Debug.Log("Count: " + unlockedLevelData.Count);
+        for(int i=0; i<unlockedLevelData.Count; i++)
+        {
+            Debug.Log(unlockedLevelData[i]["levelId"]);
+        }
     }
 
     public void LoadMainMenuScene()
@@ -95,6 +143,16 @@ public class GameManager : MonoBehaviour {
     public MenuDisplay GetMenuDisplay()
     {
         return menuDisplay;
+    }
+
+    public JsonData GetUnlockedLevelData()
+    {
+        return unlockedLevelData;
+    }
+
+    public JsonData GetUnlockedUnimogData()
+    {
+        return unlockedUnimogData;
     }
         
 }
