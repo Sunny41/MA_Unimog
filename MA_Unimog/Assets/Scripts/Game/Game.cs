@@ -2,7 +2,8 @@
 using UnityEngine.Events;
 using UnityEngine.UI;
 
-public class Game : MonoBehaviour {
+public class Game : MonoBehaviour
+{
 
     //controllables
     [SerializeField] private GameObject player;
@@ -27,7 +28,7 @@ public class Game : MonoBehaviour {
         restartListener = new UnityAction(RestartLevel);
         openInventoryListener = new UnityAction(SetMenuState);
         closeInventoryListener = new UnityAction(SetGamePlayState);
-        
+
         EventListener.StartListening("RestartLevelEvent", restartListener);
         EventListener.StartListening("OpenInventoryEvent", openInventoryListener);
         EventListener.StartListening("CloseInventoryEvent", closeInventoryListener);
@@ -37,7 +38,7 @@ public class Game : MonoBehaviour {
     {
         InitializeLevel();
     }
-            
+
     private void RestartLevel()
     {
         SetCountdownState();
@@ -65,6 +66,13 @@ public class Game : MonoBehaviour {
         GameObject obj = Instantiate(Resources.Load("Prefabs/Vehicles/" + gameManager.GetUnimogPrefabPath(), typeof(GameObject)), player.transform) as GameObject;
         CarAttributes carAttribs = obj.GetComponent<CarAttributes>();
 
+        //spawn boxes on cargoCheck
+        Transform cargoCheck = GameObject.Find("cargoCheck").GetComponent<Transform>();
+        for (int i = 0; i < 2; i++) // amount of boxes from JSON
+        {
+            GameObject box = Instantiate(Resources.Load("Prefabs/Objects/Box"), new Vector3(cargoCheck.position.x, cargoCheck.position.y + 0.5f, cargoCheck.position.z), Quaternion.identity) as GameObject;
+        }
+
         //Load level informations
         currentLevel = new Level(gameManager.GetSceneId());
 
@@ -79,15 +87,15 @@ public class Game : MonoBehaviour {
     public void LoadNextLevel()
     {
         //Unlock next level. Save data
-        if(currentLevel.NextLevel() != null)
+        if (currentLevel.NextLevel() != null)
         {
             gameManager.UnlockLevel(currentLevel, 0f);
         }
-        
+
         //Load level select menu
         gameManager.LoadMainMenuLevelSelectScene();
     }
-   
+
     void Update()
     {
         currentState.Update();
@@ -109,5 +117,5 @@ public class Game : MonoBehaviour {
     }
 
 
-    
+
 }

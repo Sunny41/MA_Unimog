@@ -316,7 +316,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1939996570064930, guid: 6abb4d022827542fc914c1afb72078cc, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6abb4d022827542fc914c1afb72078cc, type: 2}
@@ -3155,7 +3155,7 @@ GameObject:
   - component: {fileID: 1141889652}
   m_Layer: 9
   m_Name: Terrain
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4424,7 +4424,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1939996570064930, guid: 6abb4d022827542fc914c1afb72078cc, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6abb4d022827542fc914c1afb72078cc, type: 2}
@@ -4858,7 +4858,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4448124615296716, guid: d79e06c09dc3b58428d1b847b1fa5db4, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 119.81
+      value: 110.02
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d79e06c09dc3b58428d1b847b1fa5db4, type: 2}
@@ -5015,7 +5015,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1588592324}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.2407255, y: -1.5922304, z: -10}
+  m_LocalPosition: {x: -5.7407513, y: -1.5886797, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
