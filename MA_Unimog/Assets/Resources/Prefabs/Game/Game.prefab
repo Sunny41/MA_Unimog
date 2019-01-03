@@ -782,6 +782,7 @@ GameObject:
   - component: {fileID: 223015633427826552}
   - component: {fileID: 114609067465642388}
   - component: {fileID: 114179895915198360}
+  - component: {fileID: 114504485895407844}
   m_Layer: 5
   m_Name: InputManager
   m_TagString: Untagged
@@ -2474,6 +2475,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   statusText: {fileID: 114615965393624154}
+--- !u!114 &114504485895407844
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1699144305837358}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e0aa6c75e3d4124491af61a410dc942, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  joystick: {fileID: 114236489602529672}
+  tiltDown: {fileID: 114210657947928444}
+  tiltUp: {fileID: 114723179888864956}
 --- !u!114 &114528196635029192
 MonoBehaviour:
   m_ObjectHideFlags: 1
