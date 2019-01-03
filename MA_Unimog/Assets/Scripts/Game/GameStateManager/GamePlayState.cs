@@ -71,6 +71,8 @@ public class GamePlayState : GameState
         victory = true;
         victoryScreen.gameObject.SetActive(true);
         victoryScreen.SetRating(CalculateRating());
+        //Unlock next level. Save data
+        GameObject.Find("GameManager").GetComponent<GameManager>().UnlockLevel(level.NextLevel(), CalculateRating());
     }
 
     private void CheckGameOver()

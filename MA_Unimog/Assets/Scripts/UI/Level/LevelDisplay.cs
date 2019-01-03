@@ -50,6 +50,7 @@ public class LevelDisplay : MonoBehaviour {
     {
         Sprite levelSprite = Resources.Load<Sprite>(levelTexturePath);
         levelTexture.sprite = levelSprite;
+        levelRating.SetRating(rating);
         locked = false;
     }
 

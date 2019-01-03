@@ -86,12 +86,6 @@ public class Game : MonoBehaviour
 
     public void LoadNextLevel()
     {
-        //Unlock next level. Save data
-        if (currentLevel.NextLevel() != null)
-        {
-            gameManager.UnlockLevel(currentLevel, 0f);
-        }
-
         //Load level select menu
         gameManager.LoadMainMenuLevelSelectScene();
     }

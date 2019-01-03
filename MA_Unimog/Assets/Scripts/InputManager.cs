@@ -7,6 +7,8 @@ public class InputManager : MonoBehaviour {
     [SerializeField] private FixedJoystick joystick;
     [SerializeField] private Button tiltDown;
     [SerializeField] private Button tiltUp;
+    [SerializeField] private Button menuButton;
+    [SerializeField] private Button restartButton;
     private UnityAction disableUserInputListener;
     private UnityAction enableUserInputListener;
 
@@ -24,6 +26,8 @@ public class InputManager : MonoBehaviour {
         joystick.enabled = true;
         tiltDown.enabled = true;
         tiltUp.enabled = true;
+        menuButton.enabled = true;
+        restartButton.enabled = true;
     }
 
     private void DisableInput()
@@ -31,5 +35,7 @@ public class InputManager : MonoBehaviour {
         joystick.enabled = false;
         tiltDown.enabled = false;
         tiltUp.enabled = false;
+        menuButton.enabled = false;
+        restartButton.enabled = false;
     }
 }

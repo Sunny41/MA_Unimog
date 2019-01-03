@@ -92,7 +92,7 @@ public class GameManager : MonoBehaviour {
         if(level.NextLevel() != null)
         {
             JsonData newLevel = new JsonData();
-            newLevel["levelId"] = level.NextLevel().GetId();
+            newLevel["levelId"] = level.GetId();
             newLevel["rating"] = rating;
             unlockedLevelData.Add(newLevel);
         }

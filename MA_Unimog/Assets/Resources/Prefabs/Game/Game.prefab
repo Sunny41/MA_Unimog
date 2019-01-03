@@ -2489,6 +2489,8 @@ MonoBehaviour:
   joystick: {fileID: 114236489602529672}
   tiltDown: {fileID: 114210657947928444}
   tiltUp: {fileID: 114723179888864956}
+  menuButton: {fileID: 114036060257270200}
+  restartButton: {fileID: 114006787873503138}
 --- !u!114 &114528196635029192
 MonoBehaviour:
   m_ObjectHideFlags: 1
