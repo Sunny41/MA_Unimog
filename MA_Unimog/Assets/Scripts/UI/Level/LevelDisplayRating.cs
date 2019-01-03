@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class LevelDisplayRating : MonoBehaviour {
@@ -19,7 +17,7 @@ public class LevelDisplayRating : MonoBehaviour {
             star1.gameObject.SetActive(true);
             star2.gameObject.SetActive(true);
         }
-        else if(rating > 2 && rating <= 3)
+        else if(rating > 2)
         {
             star1.gameObject.SetActive(true);
             star2.gameObject.SetActive(true);

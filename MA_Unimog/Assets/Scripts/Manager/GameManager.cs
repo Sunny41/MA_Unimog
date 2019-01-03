@@ -89,11 +89,21 @@ public class GameManager : MonoBehaviour {
 
     public void UnlockLevel(Level level, float rating)
     {
+        //Save rating from current level
+        for(int i=0; i<unlockedLevelData.Count; i++)
+        {
+            if((int)unlockedLevelData[i]["levelId"] == level.GetId())
+            {
+                unlockedLevelData[i]["rating"] = rating;
+            }
+        }
+
+        //Unlock next level if possible
         if(level.NextLevel() != null)
         {
             JsonData newLevel = new JsonData();
-            newLevel["levelId"] = level.GetId();
-            newLevel["rating"] = rating;
+            newLevel["levelId"] = level.NextLevel().GetId();
+            newLevel["rating"] = 0.0f;
             unlockedLevelData.Add(newLevel);
         }
 

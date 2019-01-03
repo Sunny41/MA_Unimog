@@ -15,7 +15,7 @@ public class LevelDisplay : MonoBehaviour {
     [SerializeField]
     private bool locked;
     private string levelTexturePath;
-
+    private Sprite levelSprite;
     private int levelId;
     private string sceneId;
     private string level;
@@ -28,6 +28,7 @@ public class LevelDisplay : MonoBehaviour {
         Sprite lockedLevel = (Sprite)Resources.Load<Sprite>("Textures/Schloss");
         levelTexture.sprite = lockedLevel;
         //Set level parameters
+        levelSprite = Resources.Load<Sprite>(levelTexturePath);
         this.levelSelectMenu = levelSelectMenu;
         this.unimogSelectMenu = unimogSelectMenu;
         this.levelId = levelID;
@@ -35,7 +36,6 @@ public class LevelDisplay : MonoBehaviour {
         this.level = level;
         
         text.text = level.ToString();
-        levelRating.SetRating(0f);
     }
 
     public void SelectLevel()
@@ -48,9 +48,7 @@ public class LevelDisplay : MonoBehaviour {
 
     public void UnlockLevel()
     {
-        Sprite levelSprite = Resources.Load<Sprite>(levelTexturePath);
         levelTexture.sprite = levelSprite;
-        levelRating.SetRating(rating);
         locked = false;
     }
 

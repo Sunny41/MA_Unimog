@@ -55,10 +55,12 @@ public class LevelSelectMenu : MonoBehaviour {
         {
             for(int i=0; i<unlockedLevelData.Count; i++)
             {
+                int levelId = (int)unlockedLevelData[i]["levelId"];
                 foreach (GameObject obj in levelDisplayList)
                 {
-                    if((int)unlockedLevelData[i]["levelId"] == obj.GetComponent<LevelDisplay>().GetLevelId())
-                    {
+                    int levelDisplayId = obj.GetComponent<LevelDisplay>().GetLevelId();
+                    if (levelId == levelDisplayId)
+                    {                        
                         obj.GetComponent<LevelDisplay>().UnlockLevel();
                         float rating = (float)(double)unlockedLevelData[i]["rating"];
                         obj.GetComponent<LevelDisplay>().SetRating(rating);

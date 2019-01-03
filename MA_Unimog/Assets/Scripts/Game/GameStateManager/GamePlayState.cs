@@ -41,6 +41,7 @@ public class GamePlayState : GameState
 
     public override void Update()
     {
+        Time.timeScale = 1;
         EventListener.TriggerEvent("EnablePlayerInputEvent");
 
         if (!victory && !gameOver)
@@ -72,7 +73,7 @@ public class GamePlayState : GameState
         victoryScreen.gameObject.SetActive(true);
         victoryScreen.SetRating(CalculateRating());
         //Unlock next level. Save data
-        GameObject.Find("GameManager").GetComponent<GameManager>().UnlockLevel(level.NextLevel(), CalculateRating());
+        GameObject.Find("GameManager").GetComponent<GameManager>().UnlockLevel(level, CalculateRating());
     }
 
     private void CheckGameOver()
