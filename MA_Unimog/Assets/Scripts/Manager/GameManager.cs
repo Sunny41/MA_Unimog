@@ -24,7 +24,6 @@ public class GameManager : MonoBehaviour {
             SetPortraitRotation();
         }
 
-        PlayerPrefs.DeleteKey("unlocked_level");
         //Load unlocked
         LoadUnlocked();
 
@@ -63,6 +62,13 @@ public class GameManager : MonoBehaviour {
         }
     }
 
+    private void SaveUnlocked()
+    {
+        PlayerPrefs.SetString("unlocked_level", unlockedLevelData.ToJson());
+        PlayerPrefs.SetString("unlocked_unimogs", unlockedUnimogData.ToJson());
+        PlayerPrefs.Save();
+    }
+    
     private void SetPortraitRotation()
     {
         Screen.autorotateToLandscapeLeft = false;
@@ -81,14 +87,25 @@ public class GameManager : MonoBehaviour {
         Screen.orientation = ScreenOrientation.Landscape;
     }
 
-    public void UnlockLevel(int levelId, float rating)
+    public void UnlockLevel(Level level, float rating)
     {
-        unlockedLevelData.Add("{'levelId':" + levelId + ", 'rating':" + rating + "}");
-        Debug.Log("Count: " + unlockedLevelData.Count);
-        for(int i=0; i<unlockedLevelData.Count; i++)
+        if(level.NextLevel() != null)
         {
-            Debug.Log(unlockedLevelData[i]["levelId"]);
+            JsonData newLevel = new JsonData();
+            newLevel["levelId"] = level.NextLevel().GetId();
+            newLevel["rating"] = rating;
+            unlockedLevelData.Add(newLevel);
         }
+
+        //Unlock unimog if possible
+        if(level.GetUnlockUnimogId() != null)
+        {
+            JsonData newUnimog = new JsonData();
+            newUnimog["unimogId"] = (int)level.GetUnlockUnimogId();
+            unlockedUnimogData.Add(newUnimog);
+        }
+
+        SaveUnlocked();
     }
 
     public void LoadMainMenuScene()

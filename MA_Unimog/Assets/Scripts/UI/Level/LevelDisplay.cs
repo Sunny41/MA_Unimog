@@ -19,6 +19,7 @@ public class LevelDisplay : MonoBehaviour {
     private int levelId;
     private string sceneId;
     private string level;
+    private float rating;
 
     public void Initialize(LevelSelectMenu levelSelectMenu, GameObject unimogSelectMenu, int levelID, string sceneId, string level)
     {
@@ -29,11 +30,12 @@ public class LevelDisplay : MonoBehaviour {
         //Set level parameters
         this.levelSelectMenu = levelSelectMenu;
         this.unimogSelectMenu = unimogSelectMenu;
-        text.text = level.ToString();
-        levelRating.SetRating(0f);
         this.levelId = levelID;
         this.sceneId = sceneId;
         this.level = level;
+        
+        text.text = level.ToString();
+        levelRating.SetRating(0f);
     }
 
     public void SelectLevel()

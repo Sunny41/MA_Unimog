@@ -5,7 +5,8 @@
 	"level": "Tutorial",
 	"nextLevelId":2,
 	"time": 20,
-	"unimogBoxes": 1
+	"unimogBoxes": 1,
+	"unlockUnimogId":1
   },
   "Level2": {
     "id": 2,
@@ -21,7 +22,8 @@
 	"nextLevelId":4,
 	"level": "2",
 	"time": 25,
-	"unimogBoxes": 3
+	"unimogBoxes": 3,
+	"unlockUnimogId":2
   },
   "Level4": {
     "id": 4,
@@ -37,7 +39,8 @@
 	"nextLevelId":6,
 	"level": "4",
 	"time": 35,
-	"unimogBoxes": 3
+	"unimogBoxes": 3,
+	"unlockUnimogId":3
   },
   "Level6": {
     "id": 6,

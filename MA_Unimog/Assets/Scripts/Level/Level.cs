@@ -1,4 +1,5 @@
 ﻿using LitJson;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Level {
@@ -9,6 +10,7 @@ public class Level {
     private int? nextLevel;
     private int time;
     private int unimogBoxes;
+    private int? unlockUnimogId;
 
 	public Level(string sceneId)
     {
@@ -26,6 +28,15 @@ public class Level {
                 nextLevel = (int?)levelData[i]["nextLevelId"];
                 time = (int)levelData[i]["time"];
                 unimogBoxes = (int)levelData[i]["unimogBoxes"];
+                ICollection<string> keys = (ICollection<string>)levelData[i].Keys;
+                unlockUnimogId = null;
+                foreach(string key in keys)
+                {
+                    if (key.Equals("unlockUnimogId"))
+                    {
+                        unlockUnimogId = (int)levelData[i]["unlockUnimogId"];
+                    }
+                }
             }
         }
     }
@@ -82,5 +93,10 @@ public class Level {
             return new Level((int)nextLevel);
         }
         return null;
+    }
+
+    public int? GetUnlockUnimogId()
+    {
+        return unlockUnimogId;
     }
 }
