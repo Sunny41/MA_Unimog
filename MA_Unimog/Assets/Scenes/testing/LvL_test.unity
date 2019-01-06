@@ -2026,6 +2026,26 @@ Prefab:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1588592326}
+    - target: {fileID: 224326376017773692, guid: d79e06c09dc3b58428d1b847b1fa5db4,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224188544937926878, guid: d79e06c09dc3b58428d1b847b1fa5db4,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224490190189513324, guid: d79e06c09dc3b58428d1b847b1fa5db4,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224205941114180920, guid: d79e06c09dc3b58428d1b847b1fa5db4,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 224061141997343286, guid: d79e06c09dc3b58428d1b847b1fa5db4,
         type: 2}
       propertyPath: m_AnchorMin.y
@@ -3439,7 +3459,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1588592324}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.91, y: -2.0100002, z: -10}
+  m_LocalPosition: {x: -7.647667, y: -2.0123644, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
