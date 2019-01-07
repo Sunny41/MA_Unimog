@@ -9,7 +9,8 @@ public class CountdownState : GameState {
 
     public CountdownState(Game manager, Text countdownTxt) : base(manager)
     {
-        EventListener.TriggerEvent("DisablePlayerInputEvent");
+        EventListener.TriggerEvent("EnablePlayerInputEvent");
+        EventListener.TriggerEvent("DeactivatePlayerInputEvent");
         this.countdownTxt = countdownTxt;
         countdownTxt.gameObject.SetActive(true);
         secondCounter = 1f;
@@ -19,7 +20,8 @@ public class CountdownState : GameState {
 
     public override void Update()
     {
-        EventListener.TriggerEvent("DisablePlayerInputEvent");
+        EventListener.TriggerEvent("EnablePlayerInputEvent");
+        EventListener.TriggerEvent("DeactivatePlayerInputEvent");
 
         secondCounter -= Time.deltaTime;
         if (secondCounter <= 0 && countDown > 0)

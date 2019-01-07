@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class CarAttributes : MonoBehaviour
 {
@@ -12,14 +13,22 @@ public class CarAttributes : MonoBehaviour
     [SerializeField]
     private float fuelConsumption = 10f;
 
-    private bool canDrive = true;
+    private bool canDrive = false;
+    private bool tippedOver = false;
     private int boxes = 0;
 
     private InitializeCar ic;
+    private UnityAction deactivateUserInputListener;
+    private UnityAction activateUserInputListener;
 
-    public void Start()
+    void Start()
     {
         ic = new InitializeCar();
+        deactivateUserInputListener = new UnityAction(DeactivateCanDriveStatus);
+        activateUserInputListener = new UnityAction(ActivateCanDriveStatus);
+
+        EventListener.StartListening("DeactivatePlayerInputEvent", deactivateUserInputListener);
+        EventListener.StartListening("ActivatePlayerInputEvent", activateUserInputListener);
     }
 
     private class InitializeCar : MonoBehaviour
@@ -34,6 +43,16 @@ public class CarAttributes : MonoBehaviour
         {
             return this.boxes;
         }
+    }
+
+    void DeactivateCanDriveStatus()
+    {
+        SetCanDriveStatus(false);
+    }
+
+    void ActivateCanDriveStatus()
+    {
+        SetCanDriveStatus(true);
     }
 
 
@@ -81,6 +100,16 @@ public class CarAttributes : MonoBehaviour
         {
             this.SetCanDriveStatus(false);
         }
+    }
+
+    public void SetTippedOver(bool value)
+    {
+        this.tippedOver = value;
+    }
+
+    public bool TippedOver()
+    {
+        return tippedOver;
     }
 
     private void Update()

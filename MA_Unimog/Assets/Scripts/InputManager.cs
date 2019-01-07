@@ -23,19 +23,19 @@ public class InputManager : MonoBehaviour {
 
     private void EnableInput()
     {
-        joystick.enabled = true;
-        tiltDown.enabled = true;
-        tiltUp.enabled = true;
-        menuButton.enabled = true;
-        restartButton.enabled = true;
+        joystick.gameObject.SetActive(true);
+        tiltDown.gameObject.SetActive(true);
+        tiltUp.gameObject.SetActive(true);
+        menuButton.gameObject.SetActive(true);
+        restartButton.gameObject.SetActive(true);
     }
 
     private void DisableInput()
     {
-        joystick.enabled = false;
-        tiltDown.enabled = false;
-        tiltUp.enabled = false;
-        menuButton.enabled = false;
-        restartButton.enabled = false;
+        joystick.gameObject.SetActive(false);
+        tiltDown.gameObject.SetActive(false);
+        tiltUp.gameObject.SetActive(false);
+        menuButton.gameObject.SetActive(false);
+        restartButton.gameObject.SetActive(false);
     }
 }

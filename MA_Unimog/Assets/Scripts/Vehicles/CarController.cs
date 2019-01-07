@@ -25,6 +25,8 @@ public class CarController : MonoBehaviour
     private Joystick joystick;
     private CinemachineVirtualCamera CMcam;
 
+    private CarAttributes carAttributes;
+
     private bool grounded;
     private const float groundedRadius = .2f;
 
@@ -48,6 +50,9 @@ public class CarController : MonoBehaviour
 
         //Initialize Motor
         this.motor = new JointMotor2D { motorSpeed = 0, maxMotorTorque = 4f };
+
+        //CarAttributes
+        this.carAttributes = GetComponent<CarAttributes>();
     }
     void Update()
     {
@@ -117,21 +122,20 @@ public class CarController : MonoBehaviour
             if (gameOverCounter >= 1f) //anzahl Sekunden, die der Collider den Boden berühren soll
             {
                 CarAttributes ca = this.GetComponentInParent<CarAttributes>();
-                ca.SetCanDriveStatus(false);
+                ca.SetTippedOver(tippedOver);
             }
 
         }
         else
         {
             gameOverCounter = 0;
-            CarAttributes ca = this.GetComponentInParent<CarAttributes>();
 
-            if (movement == 0f || tippedOver || !ca.GetCanDriveStatus())
+            if (movement == 0f || tippedOver || !carAttributes.GetCanDriveStatus())
             {
                 backWheel.useMotor = false;
                 frontWheel.useMotor = false;
             }
-            else if (grounded && !tippedOver && ca.GetCanDriveStatus())
+            else if (grounded && !tippedOver && carAttributes.GetCanDriveStatus())
             {
                 backWheel.useMotor = true;
                 frontWheel.useMotor = true;
@@ -140,7 +144,7 @@ public class CarController : MonoBehaviour
                 backWheel.motor = motor;
                 frontWheel.motor = motor;
 
-                ca.ConsumeFuel();
+                carAttributes.ConsumeFuel();
             }
 
             rb.AddTorque(-rotation * rotationSpeed * Time.fixedDeltaTime);

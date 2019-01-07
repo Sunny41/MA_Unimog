@@ -43,6 +43,7 @@ public class GamePlayState : GameState
     {
         Time.timeScale = 1;
         EventListener.TriggerEvent("EnablePlayerInputEvent");
+        EventListener.TriggerEvent("ActivatePlayerInputEvent");
 
         if (!victory && !gameOver)
         {
@@ -78,7 +79,7 @@ public class GamePlayState : GameState
 
     private void CheckGameOver()
     {
-        if (levelTimeCounter <= 0 || carAttributes.GetFuelStatus() <= 0 || !carAttributes.GetCanDriveStatus())
+        if (levelTimeCounter <= 0 || carAttributes.GetFuelStatus() <= 0 || carAttributes.TippedOver())
         {
             gameOver = true;
             gameOverScreen.gameObject.SetActive(true);

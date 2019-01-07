@@ -54,8 +54,6 @@ public class Game : MonoBehaviour
 
     private void InitializeLevel()
     {
-        SetCountdownState();
-
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
 
         //Set Player to spawn point
@@ -77,6 +75,8 @@ public class Game : MonoBehaviour
         currentLevel = new Level(gameManager.GetSceneId());
 
         gamePlayState = new GamePlayState(this, currentLevel, carAttribs, victoryScreen, gameOverScreen);
+
+        SetCountdownState();
     }
 
     public void LoadMainMenu()
