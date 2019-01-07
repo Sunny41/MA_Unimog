@@ -13,7 +13,7 @@
 	"sceneId":"LvL_1",
 	"level": "1",
 	"nextLevelId":3,
-	"time": 20,
+	"time": 30,
 	"unimogBoxes": 2
   },
   "Level3": {
