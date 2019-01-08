@@ -14,6 +14,7 @@ public class CarController : MonoBehaviour
     public float driveSpeed = 2000f;
 
     public float rotationSpeed = 500f;
+    public float torque = 4f;
 
     public WheelJoint2D backWheel;
     public WheelJoint2D frontWheel;
@@ -49,7 +50,7 @@ public class CarController : MonoBehaviour
         joystick = GameObject.Find("drive_joystick").GetComponent<FixedJoystick>();
 
         //Initialize Motor
-        this.motor = new JointMotor2D { motorSpeed = 0, maxMotorTorque = 4f };
+        this.motor = new JointMotor2D { motorSpeed = 0, maxMotorTorque = torque };
 
         //CarAttributes
         this.carAttributes = GetComponent<CarAttributes>();
@@ -59,13 +60,13 @@ public class CarController : MonoBehaviour
         /**
         * Tastaturinputs    
         */
-        // movement = -Input.GetAxis("Horizontal");
+        movement = -Input.GetAxis("Horizontal");
         // rotation = Input.GetAxisRaw("Vertical");
 
         /**
         * Mobileinputs 
         */
-        movement = -this.joystick.Horizontal;
+        // movement = -this.joystick.Horizontal;
         rotation = CrossPlatformInputManager.GetAxis("Vertical");
 
         /**

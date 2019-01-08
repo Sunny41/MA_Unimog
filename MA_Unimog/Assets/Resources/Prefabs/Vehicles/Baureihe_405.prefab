@@ -230,7 +230,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 5
+  m_Mass: 8
   m_LinearDrag: 0
   m_AngularDrag: 0
   m_GravityScale: 1
@@ -873,8 +873,9 @@ MonoBehaviour:
   whatIsGround:
     serializedVersion: 2
     m_Bits: 512
-  driveSpeed: 2000
+  driveSpeed: 4000
   rotationSpeed: 450
+  torque: 4
   backWheel: {fileID: 235119404980705224}
   frontWheel: {fileID: 235081116410353560}
   rb: {fileID: 50305722497571872}
@@ -893,8 +894,8 @@ MonoBehaviour:
   whatIsBox:
     serializedVersion: 2
     m_Bits: 4096
-  fuel: 10000
-  fuelConsumption: 10
+  fuel: 300
+  fuelConsumption: 0.5
 --- !u!212 &212210056621106888
 SpriteRenderer:
   m_ObjectHideFlags: 1

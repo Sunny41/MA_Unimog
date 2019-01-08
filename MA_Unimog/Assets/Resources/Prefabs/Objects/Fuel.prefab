@@ -126,7 +126,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8a7cd70c1f9c46969f309107b43c466, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fuelValue: 1000
+  fuelValue: 100
 --- !u!212 &212411477670747720
 SpriteRenderer:
   m_ObjectHideFlags: 1

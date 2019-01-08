@@ -60,7 +60,7 @@ public class GamePlayState : GameState
 
             CheckGameOver();
         }
-        
+
     }
 
     private float CalculateRating()
@@ -79,7 +79,7 @@ public class GamePlayState : GameState
 
     private void CheckGameOver()
     {
-        if (levelTimeCounter <= 0 || carAttributes.GetFuelStatus() <= 0 || carAttributes.TippedOver())
+        if (levelTimeCounter <= 0 || carAttributes.TippedOver())
         {
             gameOver = true;
             gameOverScreen.gameObject.SetActive(true);

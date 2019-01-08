@@ -99,6 +99,7 @@ public class CarAttributes : MonoBehaviour
         if (this.fuel <= 0)
         {
             this.SetCanDriveStatus(false);
+            this.fuel = 0;
         }
     }
 
