@@ -45,7 +45,7 @@
   "Level6": {
     "id": 6,
 	"sceneId":"LvL_5",
-	"nextLevelId":null,
+	"nextLevelId":-1,
 	"level": "5",
 	"time": 35,
 	"unimogBoxes": 3

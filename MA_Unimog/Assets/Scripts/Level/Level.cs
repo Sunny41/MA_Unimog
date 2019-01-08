@@ -88,7 +88,7 @@ public class Level {
 
     public Level NextLevel()
     {
-        if(nextLevel != null)
+        if(nextLevel != null && nextLevel > 0)
         {
             return new Level((int)nextLevel);
         }
