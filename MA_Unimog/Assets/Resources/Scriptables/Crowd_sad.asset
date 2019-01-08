@@ -9,13 +9,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e9c570064700cea43bc276ccde157ac4, type: 3}
-  m_Name: MainTheme
+  m_Name: Crowd_sad
   m_EditorClassIdentifier: 
-  clip: {fileID: 8300000, guid: 7158abe62ad2347329f90001923e2741, type: 3}
+  clip: {fileID: 8300000, guid: e2e619757336540eb8c6ff174b1bf8c0, type: 3}
   source: {fileID: 0}
-  name: MainTheme
-  loop: 1
-  layer: 0
+  name: crowd_sad
+  loop: 0
+  layer: 1
   volume: 0.25
   pitch: 1
   spatialBlend: 0

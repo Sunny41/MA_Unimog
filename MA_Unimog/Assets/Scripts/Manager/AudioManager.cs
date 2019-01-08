@@ -107,4 +107,31 @@ public class AudioManager : MonoBehaviour {
         
     }
 
+    public void PauseMusic()
+    {
+        foreach (Sound sound in sounds)
+        {
+            if (sound.layer == 0)
+                sound.source.Pause();
+        }
+    }
+
+    public void UnpauseMusic()
+    {
+        foreach (Sound sound in sounds)
+        {
+            if (sound.layer == 0)
+                sound.source.UnPause();
+        }
+    }
+
+    public void StopMusic()
+    {
+        foreach (Sound sound in sounds)
+        {
+            if (sound.layer == 0)
+                sound.source.Stop();
+        }
+    }
+
 }

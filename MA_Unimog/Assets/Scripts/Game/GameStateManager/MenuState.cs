@@ -6,6 +6,7 @@ public class MenuState : GameState {
     {
         EventListener.TriggerEvent("DisablePlayerInputEvent");
         Time.timeScale = 0;
+        GameObject.Find("AudioManager").GetComponent<AudioManager>().PauseMusic();
     }
 
     public override void Update()

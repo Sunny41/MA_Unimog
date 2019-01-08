@@ -21,7 +21,7 @@ public class GameManager : MonoBehaviour {
         if (!instance)
         {
             DontDestroyOnLoad(this.gameObject);
-            SetPortraitRotation();
+            //SetPortraitRotation();
         }
 
         //Load unlocked
@@ -87,6 +87,14 @@ public class GameManager : MonoBehaviour {
         Screen.orientation = ScreenOrientation.Landscape;
     }
 
+    private void SetAllOrientations()
+    {
+        Screen.autorotateToLandscapeRight = true;
+        Screen.autorotateToLandscapeLeft = true;
+        Screen.autorotateToPortrait = true;
+        Screen.autorotateToPortraitUpsideDown = true;
+    }
+
     public void UnlockLevel(Level level, float rating)
     {
         //Save rating from current level
@@ -121,14 +129,16 @@ public class GameManager : MonoBehaviour {
     public void LoadMainMenuScene()
     {
         SceneManager.LoadSceneAsync("MainMenu");
-        SetPortraitRotation();
+        //SetPortraitRotation();
+        SetAllOrientations();
         menuDisplay = MenuDisplay.MainMenu;
     }
 
     public void LoadMainMenuLevelSelectScene()
     {
         SceneManager.LoadSceneAsync("MainMenu");
-        SetPortraitRotation();
+        //SetPortraitRotation();
+        SetAllOrientations();
         menuDisplay = MenuDisplay.LevelSelectMenu;
     }
 

@@ -27,6 +27,7 @@ public class GamePlayState : GameState
     {
         EventListener.TriggerEvent("EnablePlayerInputEvent");
 
+        Time.timeScale = 1;
         gameOver = false;
         victory = false;
         victoryListener = new UnityAction(Victory);
@@ -35,15 +36,12 @@ public class GamePlayState : GameState
         EventListener.TriggerEvent("SetFuelAmountEvent", carAttributes.GetFuelStatus());
         EventListener.TriggerEvent("SetBoxAmountEvent", carAttributes.GetBoxesAmount());
         carAttributes.SetBoxesAmount(level.GetUnimogBoxes());
-
         EventListener.StartListening("VictoryEvent", victoryListener);
     }
 
     public override void Update()
     {
-        Time.timeScale = 1;
-        EventListener.TriggerEvent("EnablePlayerInputEvent");
-        EventListener.TriggerEvent("ActivatePlayerInputEvent");
+       
 
         if (!victory && !gameOver)
         {
@@ -61,6 +59,14 @@ public class GamePlayState : GameState
             CheckGameOver();
         }
 
+    }
+
+    public void Init()
+    {
+        Time.timeScale = 1;
+        EventListener.TriggerEvent("EnablePlayerInputEvent");
+        EventListener.TriggerEvent("ActivatePlayerInputEvent");
+        GameObject.Find("AudioManager").GetComponent<AudioManager>().UnpauseMusic();
     }
 
     private float CalculateRating()

@@ -98,6 +98,7 @@ public class Game : MonoBehaviour
     public void SetGamePlayState()
     {
         currentState = gamePlayState;
+        gamePlayState.Init();
     }
 
     public void SetMenuState()

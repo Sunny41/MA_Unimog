@@ -9,6 +9,7 @@ public class CountdownState : GameState {
 
     public CountdownState(Game manager, Text countdownTxt) : base(manager)
     {
+        GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("MainTheme_game");
         EventListener.TriggerEvent("EnablePlayerInputEvent");
         EventListener.TriggerEvent("DeactivatePlayerInputEvent");
         this.countdownTxt = countdownTxt;
@@ -16,6 +17,7 @@ public class CountdownState : GameState {
         secondCounter = 1f;
         countDown = 3;
         countdownTxt.text = "" + countDown;
+        Time.timeScale = 1;
     }
 
     public override void Update()
