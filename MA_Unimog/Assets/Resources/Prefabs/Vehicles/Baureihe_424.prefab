@@ -236,7 +236,7 @@ Rigidbody2D:
   m_GravityScale: 1
   m_Material: {fileID: 6200000, guid: 082c53eb369634232b959971b71e2291, type: 2}
   m_Interpolate: 0
-  m_SleepingMode: 1
+  m_SleepingMode: 0
   m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!50 &50867517511489986
@@ -591,6 +591,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bf12153ba5f64535a491bd205265622, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  useTouchinput: 0
   groundCheck: {fileID: 4887369681271714}
   ceilingCheck: {fileID: 4002227670204594}
   whatIsGround:

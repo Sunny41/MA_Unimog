@@ -5,7 +5,7 @@ using UnityStandardAssets.CrossPlatformInput;
 
 public class CarController : MonoBehaviour
 {
-    public bool useTouchinput = true;
+    public bool useTouchinput = false;
 
     public Transform groundCheck;
     public Transform ceilingCheck;
@@ -65,6 +65,7 @@ public class CarController : MonoBehaviour
             */
             movement = -Input.GetAxis("Horizontal");
             // rotation = Input.GetAxisRaw("Vertical");
+            rotation = CrossPlatformInputManager.GetAxis("Vertical");
         }
         else
         {
@@ -74,9 +75,9 @@ public class CarController : MonoBehaviour
             movement = -this.joystick.Horizontal;
             rotation = CrossPlatformInputManager.GetAxis("Vertical");
         }
-        
 
-        
+
+
 
         /**
         * Camera Zoom Conditions

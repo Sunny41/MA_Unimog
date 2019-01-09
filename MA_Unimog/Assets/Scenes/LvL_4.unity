@@ -3597,10 +3597,10 @@ PolygonCollider2D:
     m_Paths:
     - - {x: 38.44088, y: -26.410198}
       - {x: 44.78024, y: -27.960403}
-      - {x: 77.4116, y: -28.158762}
-      - {x: 77.1479, y: 2.8924897}
-      - {x: -10.329867, y: 5.057808}
-      - {x: -10.286391, y: 2.5877843}
+      - {x: 79.43069, y: -28.00733}
+      - {x: 78.81365, y: 3.2963088}
+      - {x: -10.783795, y: 5.0228906}
+      - {x: -10.845073, y: 2.622702}
       - {x: -10.456915, y: -26.371033}
 --- !u!1 &450110597
 GameObject:
@@ -9812,7 +9812,7 @@ MonoBehaviour:
       bevelSize: 0
       spriteIndex: 0
       corner: 0
-  m_SpriteShape: {fileID: 11400000, guid: 2751beeef000240998ff0d74ce2821d6, type: 2}
+  m_SpriteShape: {fileID: 11400000, guid: 6185427c695d642f1be0c2248cfdd7f7, type: 2}
   m_SplineDetail: 16
   m_AdaptiveUV: 1
   m_UpdateCollider: 1
@@ -9860,10 +9860,10 @@ SpriteShapeRenderer:
   m_Sprites:
   - {fileID: 21300000, guid: 71c9d16b0d779e04e8a6d6f78cf7837b, type: 3}
   - {fileID: 21300000, guid: 71c9d16b0d779e04e8a6d6f78cf7837b, type: 3}
-  - {fileID: 21300000, guid: fe220f5140de3324ab2e13a8de8993ab, type: 3}
+  - {fileID: 21300000, guid: bd7c8c115829a498493d32ee31e56030, type: 3}
   - {fileID: 21300000, guid: 71c9d16b0d779e04e8a6d6f78cf7837b, type: 3}
-  - {fileID: 21300000, guid: d03ce7cc0d571c24ebfc5a7afa2db743, type: 3}
-  - {fileID: 21300000, guid: 1451a2d5b83fd4e499f9ed93845ba235, type: 3}
+  - {fileID: 21300000, guid: 8b96ec490e8d14bc6a36eacdb42d886b, type: 3}
+  - {fileID: 21300000, guid: f019dec26aa7d41d39bd65aeae6afb78, type: 3}
   - {fileID: 21300000, guid: 696e4921e3ad7cf479fb36f3a7b9b36e, type: 3}
   - {fileID: 21300000, guid: dbba0da7b78a22647a9da9ad638a340b, type: 3}
   - {fileID: 0}
@@ -10556,7 +10556,7 @@ MonoBehaviour:
       bevelSize: 0
       spriteIndex: 0
       corner: 1
-  m_SpriteShape: {fileID: 11400000, guid: 2751beeef000240998ff0d74ce2821d6, type: 2}
+  m_SpriteShape: {fileID: 11400000, guid: 6185427c695d642f1be0c2248cfdd7f7, type: 2}
   m_SplineDetail: 16
   m_AdaptiveUV: 1
   m_UpdateCollider: 1
@@ -10604,10 +10604,10 @@ SpriteShapeRenderer:
   m_Sprites:
   - {fileID: 21300000, guid: 71c9d16b0d779e04e8a6d6f78cf7837b, type: 3}
   - {fileID: 21300000, guid: 71c9d16b0d779e04e8a6d6f78cf7837b, type: 3}
-  - {fileID: 21300000, guid: fe220f5140de3324ab2e13a8de8993ab, type: 3}
+  - {fileID: 21300000, guid: bd7c8c115829a498493d32ee31e56030, type: 3}
   - {fileID: 21300000, guid: 71c9d16b0d779e04e8a6d6f78cf7837b, type: 3}
-  - {fileID: 21300000, guid: d03ce7cc0d571c24ebfc5a7afa2db743, type: 3}
-  - {fileID: 21300000, guid: 1451a2d5b83fd4e499f9ed93845ba235, type: 3}
+  - {fileID: 21300000, guid: 8b96ec490e8d14bc6a36eacdb42d886b, type: 3}
+  - {fileID: 21300000, guid: f019dec26aa7d41d39bd65aeae6afb78, type: 3}
   - {fileID: 21300000, guid: 696e4921e3ad7cf479fb36f3a7b9b36e, type: 3}
   - {fileID: 21300000, guid: dbba0da7b78a22647a9da9ad638a340b, type: 3}
   - {fileID: 0}
@@ -14508,7 +14508,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1588592324}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.297881, y: -1.6134226, z: -10}
+  m_LocalPosition: {x: -5.824395, y: -1.6162099, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
