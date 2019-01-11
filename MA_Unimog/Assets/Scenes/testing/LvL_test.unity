@@ -2026,16 +2026,6 @@ Prefab:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1588592326}
-    - target: {fileID: 224326376017773692, guid: d79e06c09dc3b58428d1b847b1fa5db4,
-        type: 2}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224188544937926878, guid: d79e06c09dc3b58428d1b847b1fa5db4,
-        type: 2}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 224490190189513324, guid: d79e06c09dc3b58428d1b847b1fa5db4,
         type: 2}
       propertyPath: m_AnchorMax.y
@@ -2046,6 +2036,16 @@ Prefab:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 224326376017773692, guid: d79e06c09dc3b58428d1b847b1fa5db4,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224188544937926878, guid: d79e06c09dc3b58428d1b847b1fa5db4,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 224061141997343286, guid: d79e06c09dc3b58428d1b847b1fa5db4,
         type: 2}
       propertyPath: m_AnchorMin.y
@@ -2105,22 +2105,6 @@ Prefab:
         type: 2}
       propertyPath: m_SizeDelta.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4375720443340210, guid: d79e06c09dc3b58428d1b847b1fa5db4, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: -0.359
-      objectReference: {fileID: 0}
-    - target: {fileID: 4375720443340210, guid: d79e06c09dc3b58428d1b847b1fa5db4, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0.165
-      objectReference: {fileID: 0}
-    - target: {fileID: 4448124615296716, guid: d79e06c09dc3b58428d1b847b1fa5db4, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4448124615296716, guid: d79e06c09dc3b58428d1b847b1fa5db4, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 45.6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d79e06c09dc3b58428d1b847b1fa5db4, type: 2}

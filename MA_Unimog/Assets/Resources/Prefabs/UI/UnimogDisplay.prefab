@@ -659,15 +659,13 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 10
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Wheight
-
-'
+  m_Text: Gewicht
 --- !u!114 &114347548832974202
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -709,6 +707,17 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 114844454179626972}
         m_MethodName: SelectUnimog
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 114844454179626972}
+        m_MethodName: PlayMenuSlectSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -854,15 +863,13 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 10
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
-    m_HorizontalOverflow: 0
+    m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Speed
-
-'
+  m_Text: Geschwindigkeit
 --- !u!114 &114576294442347968
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -970,15 +977,13 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 10
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
-    m_HorizontalOverflow: 0
+    m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Fuel
-
-'
+  m_Text: Tankinhalt
 --- !u!114 &114607664589388422
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1155,13 +1160,13 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 10
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
-    m_HorizontalOverflow: 0
+    m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Acceleration
+  m_Text: Beschleunigung
 --- !u!114 &114721090920664124
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1696,7 +1701,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -70.9, y: 8.7875}
+  m_AnchoredPosition: {x: -78.50801, y: 8.7875}
   m_SizeDelta: {x: 64.67, y: 17.575}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224292629342558382
@@ -1717,8 +1722,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 116.25, y: 0}
-  m_SizeDelta: {x: 134.15, y: 20}
+  m_AnchoredPosition: {x: 131.43, y: 0}
+  m_SizeDelta: {x: 117.98, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224375914863988240
 RectTransform:
@@ -1756,8 +1761,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 109.02, y: 0}
-  m_SizeDelta: {x: 134.28, y: 20}
+  m_AnchoredPosition: {x: 124.21, y: 0}
+  m_SizeDelta: {x: 118.09, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224461519726561426
 RectTransform:
@@ -1777,8 +1782,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 116.25, y: 0}
-  m_SizeDelta: {x: 134.15, y: 20}
+  m_AnchoredPosition: {x: 131.43, y: 0}
+  m_SizeDelta: {x: 117.98, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224471532958949038
 RectTransform:
@@ -1874,7 +1879,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -70.902, y: -29.624994}
+  m_AnchoredPosition: {x: -78.51001, y: -29.624994}
   m_SizeDelta: {x: 64.675, y: 20.95}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224587323925799034
@@ -1928,7 +1933,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2.6, y: 42.93}
+  m_AnchoredPosition: {x: -5.008006, y: 42.93}
   m_SizeDelta: {x: 211.67, y: 29.48}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224661804385015846
@@ -1947,7 +1952,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -70.892, y: -50.575}
+  m_AnchoredPosition: {x: -78.5, y: -50.575}
   m_SizeDelta: {x: 64.675, y: 20.95}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224691575246760136
@@ -2077,7 +2082,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -63.71, y: -9.575}
+  m_AnchoredPosition: {x: -71.31801, y: -9.575}
   m_SizeDelta: {x: 79.04, y: 19.15}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224929728273824220
@@ -2098,8 +2103,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 116.81997, y: 0}
-  m_SizeDelta: {x: 133.64, y: 20}
+  m_AnchoredPosition: {x: 131.93, y: 0}
+  m_SizeDelta: {x: 117.53, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224946608660990418
 RectTransform:

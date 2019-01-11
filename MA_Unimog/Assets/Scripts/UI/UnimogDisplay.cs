@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class UnimogDisplay : MonoBehaviour {
+public class UnimogDisplay : Display {
 
     private UnimogSelectMenu unimogSelectMenu;
     public Button button;

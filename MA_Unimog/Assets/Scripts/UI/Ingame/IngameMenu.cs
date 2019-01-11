@@ -73,4 +73,9 @@ public class IngameMenu : MonoBehaviour {
     {
         EventListener.TriggerEvent("RestartLevelEvent");
     }
+
+    public void PlayMenuSelectSound()
+    {
+        GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("menu_selection");
+    }
 }

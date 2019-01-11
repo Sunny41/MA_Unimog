@@ -1,9 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class LevelDisplay : MonoBehaviour {
+public class LevelDisplay : Display {
 
     public Image levelTexture;
     public Button button;

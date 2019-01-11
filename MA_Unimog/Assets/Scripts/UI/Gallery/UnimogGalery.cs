@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class UnimogGalery : MonoBehaviour {
+public class UnimogGalery : Display
+{
 
     private GaleryMenuDisplay galeryMenuDisplay;
     public Button button;
@@ -12,7 +13,7 @@ public class UnimogGalery : MonoBehaviour {
     private int unimogId;
     private string unimogName;
 
-	public void Initialize(GaleryMenuDisplay gmd, int id, string texturePath, string unimogName)
+    public void Initialize(GaleryMenuDisplay gmd, int id, string texturePath, string unimogName)
     {
         this.locked = true;
         this.unimogId = id;
