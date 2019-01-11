@@ -12799,6 +12799,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1720184331}
   - component: {fileID: 1720184332}
+  - component: {fileID: 1720184335}
+  - component: {fileID: 1720184334}
   - component: {fileID: 1720184333}
   m_Layer: 0
   m_Name: "baumst\xE4mme1"
@@ -12869,8 +12871,8 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &1720184333
-BoxCollider2D:
+--- !u!58 &1720184333
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
@@ -12881,19 +12883,39 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.025851727, y: -0.11935103}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 5.12, y: 5.12}
-    newSize: {x: 5.12, y: 5.12}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
+  m_Offset: {x: -5.0159345, y: 0}
   serializedVersion: 2
-  m_Size: {x: 14.892194, y: 4.881298}
-  m_EdgeRadius: 0
+  m_Radius: 2.2035973
+--- !u!58 &1720184334
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1720184330}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.0000006193759, y: 0}
+  serializedVersion: 2
+  m_Radius: 2.3524518
+--- !u!58 &1720184335
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1720184330}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 5.0266366, y: 0}
+  serializedVersion: 2
+  m_Radius: 2.2746367
 --- !u!1 &1724470002
 GameObject:
   m_ObjectHideFlags: 0
