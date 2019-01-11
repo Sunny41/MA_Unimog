@@ -868,7 +868,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bf12153ba5f64535a491bd205265622, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  useTouchinput: 0
+  useTouchinput: 1
   groundCheck: {fileID: 4887369681271714}
   ceilingCheck: {fileID: 4002227670204594}
   whatIsGround:

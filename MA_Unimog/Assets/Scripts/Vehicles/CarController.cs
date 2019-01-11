@@ -5,7 +5,7 @@ using UnityStandardAssets.CrossPlatformInput;
 
 public class CarController : MonoBehaviour
 {
-    public bool useTouchinput = false;
+    public bool useTouchinput = true;
 
     public Transform groundCheck;
     public Transform ceilingCheck;
