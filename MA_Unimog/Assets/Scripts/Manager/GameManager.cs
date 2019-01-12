@@ -93,6 +93,7 @@ public class GameManager : MonoBehaviour {
         Screen.autorotateToLandscapeLeft = true;
         Screen.autorotateToPortrait = true;
         Screen.autorotateToPortraitUpsideDown = true;
+        Screen.orientation = ScreenOrientation.AutoRotation;
     }
 
     public void UnlockLevel(Level level, float rating)

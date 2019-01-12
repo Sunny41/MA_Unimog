@@ -1,8 +1,8 @@
 {
   "Credits": {
     "engine": "Unity engine 2018",
-    "aboutUs": "Stefano Carluccio: Programming; Tim Herold: Programming; Sonja Czernotzky: Design; Jannik Renner: Programming",
-    "aboutGame": "Dieses Spiel wurde von 4 Studenten der FH Reutlingen im Fach Mediale Arbeit programmiert.",
-    "aboutMuseum": "Über das Museum.... Blaaaa Blaaaa Museum halt..."
+    "aboutUs": "Sonja Czernotzky: Design, Art, Trailer;Stefano Carluccio: Music, Sound, Programmierung;Jannik Renner: UI-Design, Programmierung",
+    "aboutGame": "Dieses Spiel wurde von 3 Studenten der FH Reutlingen im Fach Mediale Arbeit erstellt. Es ist in anlehnung an das Unimog-Museum in Gaggenau entstanden. Der Spieler hat die Aufgabe, vor Ablauf der Zeit mit seinem Unimog die Kisten die sich auf der Pritsche befinden, durch das Level und zum Museum zu bringen. Dafür bekommt man Punkte und schällt neue Level und andere Fahrzeuge frei. Alle freigeschalteten Unimogs kann man in der Galerie betrachten. Dort findet man auch alle technischen Details der Originalfahzeuge, wie sie auch im Unimog-Museum zu betrachten sind.",
+    "aboutMuseum": "Unimog-Museum;An der B 462 / Ausfahrt Schloss Rotenfels;76571 Gaggenau;Telefon 07225 98131-0"
   }
 }

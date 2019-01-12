@@ -35,9 +35,10 @@ public class LevelSelectMenu : MonoBehaviour {
                 int levelID = (int)levelData[i]["id"];
                 string level = (string)levelData[i]["level"];
                 string sceneId = (string)levelData[i]["sceneId"];
+                string icon = (string)levelData[i]["icon"];
                                 
                 GameObject obj = (GameObject)Instantiate(levelDisplay, scrollbar.transform);
-                obj.GetComponent<LevelDisplay>().Initialize(this, unimogSelectMenu, levelID, sceneId, level);
+                obj.GetComponent<LevelDisplay>().Initialize(this, unimogSelectMenu, levelID, sceneId, level, icon);
                 levelDisplayList.Add(obj);
             }
             else

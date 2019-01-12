@@ -4,7 +4,10 @@ using LitJson;
 
 public class CreditsMenu : MonoBehaviour {
 
-    public Text creditText;
+    public Text engineTxt;
+    public Text aboutUsTxt;
+    public Text aboutGameTxt;
+    public Text aboutMusuemTxt;
     private JsonData creditsData;
 
     void Start () {
@@ -24,17 +27,26 @@ public class CreditsMenu : MonoBehaviour {
             string aboutUs = (string)creditsData[i]["aboutUs"];
             string aboutGame = (string)creditsData[i]["aboutGame"];
             string aboutMuseum = (string)creditsData[i]["aboutMuseum"];
-
-
+            string[] abouts = aboutMuseum.Split(';');
             string[] students = aboutUs.Split(';');
-            creditText.supportRichText = true;
-            creditText.text = engine + "\n\n"
-                                    + students[0] + "\n"
-                                    + students[1] + "\n"
-                                    + students[2] + "\n"
-                                    + students[3] + "\n\n"
-                                    + aboutGame + "\n\n" 
-                                    + aboutMuseum;
+
+            engineTxt.supportRichText = true;
+            engineTxt.text = engine;
+
+            aboutUsTxt.supportRichText = true;
+            for(int j=0; j<students.Length; j++)
+            {
+                aboutUsTxt.text += students[j] + "\n";
+            }
+
+            aboutGameTxt.supportRichText = true;
+            aboutGameTxt.text = aboutGame;
+
+            aboutMusuemTxt.supportRichText = true;
+            for(int j=0; j<abouts.Length; j++)
+            {
+                aboutMusuemTxt.text += abouts[j] + "\n";
+            }
         }
     }
 }
