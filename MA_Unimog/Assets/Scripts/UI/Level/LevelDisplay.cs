@@ -12,21 +12,20 @@ public class LevelDisplay : Display {
     private LevelSelectMenu levelSelectMenu;
     [SerializeField]
     private bool locked;
-    private string levelTexturePath;
     private Sprite levelSprite;
     private int levelId;
     private string sceneId;
     private string level;
     private float rating;
 
-    public void Initialize(LevelSelectMenu levelSelectMenu, GameObject unimogSelectMenu, int levelID, string sceneId, string level)
+    public void Initialize(LevelSelectMenu levelSelectMenu, GameObject unimogSelectMenu, int levelID, string sceneId, string level, string icon)
     {
         locked = true;
         //Set level texture
         Sprite lockedLevel = (Sprite)Resources.Load<Sprite>("Textures/Schloss");
         levelTexture.sprite = lockedLevel;
         //Set level parameters
-        levelSprite = Resources.Load<Sprite>(levelTexturePath);
+        levelSprite = Resources.Load<Sprite>("Textures/LvL_Icons/" + icon);
         this.levelSelectMenu = levelSelectMenu;
         this.unimogSelectMenu = unimogSelectMenu;
         this.levelId = levelID;
