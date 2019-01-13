@@ -13,6 +13,7 @@ public class FuelBehaviour : MonoBehaviour
             if (collision.GetComponent<CarAttributes>() != null)
             {
                 collision.GetComponent<CarAttributes>().AddFuel(this.fuelValue);
+                GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("item_fuel_collected");
                 // Debug.Log("[FuelBehaviour]: " + collision.GetComponent<CarAttributes>().GetFuelStatus());
                 Destroy(this.gameObject);
             }

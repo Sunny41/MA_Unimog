@@ -71,16 +71,24 @@ public class GamePlayState : GameState
 
     private float CalculateRating()
     {
-        return carAttributes.GetBoxesAmount() + levelTimeCounter;
+        int boxAmount = carAttributes.GetBoxesAmount();
+        int secondsLeft = levelTimeCounter;
+        int fuelLeftMod = (int)(carAttributes.GetFuelStatus() % 10);
+        Debug.Log((boxAmount * 10) + (fuelLeftMod) + secondsLeft + " MOD: " + (int)(carAttributes.GetFuelStatus() % 10));
+        return  (boxAmount * 10) + (fuelLeftMod) + secondsLeft;
     }
 
     private void Victory()
     {
-        victory = true;
-        victoryScreen.gameObject.SetActive(true);
-        victoryScreen.SetRating(CalculateRating());
-        //Unlock next level. Save data
-        GameObject.Find("GameManager").GetComponent<GameManager>().UnlockLevel(level, CalculateRating());
+        if (!victory)
+        {
+            victory = true;
+            victoryScreen.gameObject.SetActive(true);
+            victoryScreen.SetRating(CalculateRating());
+            GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("crowd_cheering");
+            //Unlock next level. Save data
+            GameObject.Find("GameManager").GetComponent<GameManager>().UnlockLevel(level, CalculateRating());
+        }        
     }
 
     private void CheckGameOver()
@@ -89,6 +97,7 @@ public class GamePlayState : GameState
         {
             gameOver = true;
             gameOverScreen.gameObject.SetActive(true);
+            GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("crowd_sad");
         }
     }
 

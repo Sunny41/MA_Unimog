@@ -9,15 +9,15 @@ public class LevelDisplayRating : MonoBehaviour {
 
     public void SetRating(float rating)
     {
-        if(rating > 0 && rating <= 1)
+        if(rating >= 10 && rating <= 20)
         {
             star1.gameObject.SetActive(true);
-        }else if(rating > 1 && rating <= 2)
+        }else if(rating > 20 && rating <= 30)
         {
             star1.gameObject.SetActive(true);
             star2.gameObject.SetActive(true);
         }
-        else if(rating > 2)
+        else if(rating > 30)
         {
             star1.gameObject.SetActive(true);
             star2.gameObject.SetActive(true);

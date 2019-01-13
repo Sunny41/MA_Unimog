@@ -87,6 +87,7 @@ public class Game : MonoBehaviour
     public void LoadNextLevel()
     {
         //Load level select menu
+        GameObject.Find("AudioManager").GetComponent<AudioManager>().StopSound();
         gameManager.LoadMainMenuLevelSelectScene();
     }
 

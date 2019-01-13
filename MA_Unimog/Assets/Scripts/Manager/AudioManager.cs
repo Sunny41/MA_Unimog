@@ -134,4 +134,13 @@ public class AudioManager : MonoBehaviour {
         }
     }
 
+    public void StopSound()
+    {
+        foreach (Sound sound in sounds)
+        {
+            if (sound.layer == 1)
+                sound.source.Stop();
+        }
+    }
+
 }

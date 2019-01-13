@@ -38,6 +38,10 @@ public class CarController : MonoBehaviour
     private float rotation = 0f;
 
     private float gameOverCounter = 0;
+    private Player player;
+    private bool playNewAudio;
+    private float oldMovement;
+    private float oldVelocityX;
 
 
     void Start()
@@ -55,6 +59,8 @@ public class CarController : MonoBehaviour
 
         //CarAttributes
         this.carAttributes = GetComponent<CarAttributes>();
+
+        player = GetComponentInParent<Player>();
     }
     void Update()
     {
@@ -91,6 +97,10 @@ public class CarController : MonoBehaviour
             StartCoroutine("CameraZoom", "ZOOM_IN");
         }
 
+        ControllSound();
+
+        oldMovement = movement;
+        oldVelocityX = rb.velocity.x;
     }
 
     private IEnumerator CameraZoom(string zoom)
@@ -161,6 +171,10 @@ public class CarController : MonoBehaviour
             rb.AddTorque(-rotation * rotationSpeed * Time.fixedDeltaTime);
         }
 
+    }
+    
+    void ControllSound()
+    {
     }
 
 }
